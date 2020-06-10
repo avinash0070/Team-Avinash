@@ -1,0 +1,52 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Avinash"
+    lastUpdate: "18 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Select Comapany Customer"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to finance -> customer -> dashboard -> add customer"
+        - "Verify that the default page is customer dashboard"
+        - "Verify that left menu customer is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Customer' button, select type comapany"
+        - "Click on 'Close' button, the add customer details popup should get closed"
+        - "Click on 'Previous' button, the add customer details should be go to the search customer popup"
+        - "Verify that there is four fields (Customer Organisation, Customer Contact, My Contact CC List and Link Bank Account)" 
+        - "Verify that customer organisation have three fields (Customer Name, Customer Organisation, Customer PAN)" 
+        - "Verify that the 'Customer Name' field is required and it must contain only alphabets."
+        - "Verify that the 'Customer PAN' Requires only capital letters and number, of length 10. Ex: AAAAA1111A"
+        - "Verify that the 'Customer Organisation' field must have URL format"
+        - "Verify that the 'Customer Contact' have three input fields (Person name, Person email and Phone Number)"
+        - "Verify that the 'Person Name' field is required and it must contain only alphabets"
+        - "Verify that the 'Email' field must have email format"
+        - "Verify that the 'Phone Number' field is required and it must contain only number"
+        - "Verify that the 'My Contact' have three input fields (Person name, person email and Phone number)" 
+        - "Verify that person email and Phone number fields are disable"
+        - "Verify that cc list have email input and add button"
+        - "Click on Add button, The CC Email table should be created"
+        - "Click on Remove cc email button, the table row is removed"
+        - "Verify that Link Bank Account shows bank list dropdown" 
+        - "Verify that information we have filled in popup should get save properly and get dispalyes at dashboard"
+   conditions:
+        - "Test fails, if 'Next' button works without filled mandetory fields"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 May, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

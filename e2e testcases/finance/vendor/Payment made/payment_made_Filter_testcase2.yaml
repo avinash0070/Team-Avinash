@@ -1,0 +1,35 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payment made"
+    owner: "Avinash Shinde"
+    lastUpdate: "22 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Default vendor search filter result search according to earch by vendor name"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to finance -> vendor -> payment made"
+        - "Verify that the default page is payment made"
+        - "Verify that left menu paymnet made is highlighted"
+        - "Check spelling on all text contents"
+        - "Verify that in search filter it shows placeholder 'search by vendor name'"
+        - "If search by vendor name not match with added payment made entries then it shows 'Sorry, no record found for this page'"
+        - "If search by vendor name match then shows perticular entry on dashboard"
+    conditions:
+        - "Test fails if default vendor name search filter result not search according to earch by vendor name"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "22 May, 2020" #set the last when this test was run
+    runBy: Avinash shinde #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

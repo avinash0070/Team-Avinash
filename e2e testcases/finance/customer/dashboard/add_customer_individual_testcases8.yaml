@@ -1,0 +1,45 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Avinash"
+    lastUpdate: "18 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Select individual Customer Without Email"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to finance -> customer -> dashboard -> add customer"
+        - "Verify that the default page is customer dashboard"
+        - "Verify that left menu customer is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Customer' button, select individual type (Without Email)"
+        - "Click on 'close' button, The 'Add Customer Details' popup should get Closed"
+        - "Click on 'Previous' button, The 'Add Customer Details' should  go to the previous Select popup"
+        - "Verify that there is three fields (Customer Contact, My Contact and Link Bank Account)" 
+        - "Verify that the 'Customer Contact' have 3 input fields (Customer PAN, Person name and Phone number)"
+        - "Verify that the 'Customer PAN' requires only capital letters and number, of length 10. Ex: AAAAA1111A"
+        - "Verify that the 'Person name' field is required and it must contain only alphabets"
+        - "Verify that the 'Phone number' field is required and it must contain only number"
+        - "Verify that the 'My Contact' have three input fields (Person name, person email and Phone number)" 
+        - "Verify that person email and phone number fields are disable"
+        - "Verify that 'Link Bank Account' shows bank list dropdown" 
+        - "Verify that information we have filled in popup should get save properly and get dispalyes at dashboard"
+   conditions:
+        - "Test fails if Next button works without filled mandetory fileds"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 May, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

@@ -1,0 +1,41 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Avinash"
+    lastUpdate: "18 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Select company customer"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to finance -> customer -> dashboard ->Add customer "
+        - "Verify that the default page is customer dashboard"
+        - "Verify that left menu customer is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Customer' button, and select type Company"
+        - "Click on 'close' button, the search Customer popup should get closed"
+        - "Click on 'next' button, the select popup should go to the next search popup"
+        - "Click on 'previous' button, the search popup should go to the previous Select popup"
+        - "Verify that there is one input field Search Customer by name"
+        - "Verify that there is one Search button"
+        - "Fill the input field(the customer is not present in the customer list) and click on Search button the add New customer button is visible"
+        - "Click on add new customer button, The search popup should go to the add customer details popup"
+    conditions:
+        - "Test fails if Search Customer popup is not displayed at dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 May, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

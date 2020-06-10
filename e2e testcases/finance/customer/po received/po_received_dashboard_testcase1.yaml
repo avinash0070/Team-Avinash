@@ -1,0 +1,39 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Po received"
+    owner: "Avinash"
+    lastUpdate: "25 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Purchase order should add purchase order at dashboard"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to finance -> customer -> po received"
+        - "Verify that the default page is po received"
+        - "Verify that left menu po sent is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on add purchase order button" 
+        - "Fill all required fields and click on add button"
+        - "Verify that information we have filled in pup should get save properly and get dispalyes at dashboard"
+        - "Verify that there is five coloum present at dashboard (Po no., Customer name, Po date, Due date, Total amount)"
+        - "Verify that there is edit button"
+        - "Verify that there is view button"
+        - "Verify that there is cancel button"
+    conditions:
+        - "Test fails if default po received dashboard page is not po received dashboard page"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "25 May, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

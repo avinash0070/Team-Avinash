@@ -1,0 +1,33 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+  name: "LMS"
+  owner: "Archana Nigam"
+  lastUpdate: "March, 2020"
+  status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+  summary: "default lms page should be employee list"
+  browsers:
+    - "chrome"
+    - "IE"
+  steps:
+    - "Go to HR->LMS
+    - "verify that the default page is employee page"
+    - "verify that left menu Employees is highlighted"
+    - "verify that there is an entry for each"
+    - "check spelling on all text contents"
+  conditions:
+    - "Test fails default LMS page is not employee page"
+  automation:
+    status: manual #this test is automated or not
+    testPath:  #set this with a valid path if test is automated
+testRun:
+  status: notRun #valid status are notRun, pass, fail, sometimeFail
+  date: #set the last when this test was run
+  runBy: anurag #name of the person running this testType
+  duration: #time taken in seconds to run this test
+  env: #valid value are dev, qa, production
+  buildVersion: #mention the build version
+  bug:
+    details: |
+      "Multi time bug sumary"
+    bugNum: #if bug was reported and filed, report the bdug Number here
