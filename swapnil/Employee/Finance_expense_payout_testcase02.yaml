@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payout"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "11 june, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Added cycle data should display in finance expense payout dashboard"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to finance -> expense -> payout "
+        - "Verify that the default page is expense payout"
+        - "Verify that left menu payout dashboard is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on add cycle button it should be open expense payout pop-up"
+        - "Fill all the details"
+        - "Click on add button"
+        - "Verify all data is present and listed with 'START DATE,CUTOFF DATE,PAYOUT DATE,TOTAL AMOUNT,EMPLOYEES,EXPENSES,STATUS'"
+        - "Verify there is view button"
+        - "Verify there is action button"
+        - "Click on view button it should be open expense payout details pop-up"
+        - "Click on action button it should open drop-down list with option 'cancel'"
+    conditions:
+        - "Test fails if added cycle should not display"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "11 june, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug: 
+        details:
+        bugNum:  #if bug was reported and filed, report the bug number here
