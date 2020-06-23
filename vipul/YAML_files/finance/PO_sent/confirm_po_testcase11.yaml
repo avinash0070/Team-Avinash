@@ -1,0 +1,42 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Vipul suryawanshi"
+    lastUpdate: "23 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "after clicking 'next' button confirm purchase order details pop up should display"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to finance -> vendor -> po sent -> add purchase order"
+        - "Verify that purchase order pop up is there"
+        - "Click on 'next' button"
+        - "Verify that confirm purchase order details pop up should open"
+        - "Check spelling on all text contents"
+        - "Verify that there is company name and company logo"
+        - "Verify that default vendor details are display"
+        - "Verify that is po date and po due date display"
+        - "Verify that there is item list field (item, Description, Quantity, Price, Amount)"
+        - "Verify that total field is there and it is displaying amount"
+        - "Verify that there is 'previous' button"
+        - "Verify that there is 'next' button"
+        - "Verify that there is 'cancel' button icon"
+        - "Verify that there company signature is there"
+    conditions:
+        - "Test fails if after clicking 'next' button confirm purchase order details pop up does not display"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: #valid status are notRun, pass, fail, sometimeFail
+    date: "23 June, 2020" #set the last when this test was run
+    runBy: Vipul suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

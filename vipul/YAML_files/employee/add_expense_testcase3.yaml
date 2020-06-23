@@ -1,0 +1,46 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense dashboard"
+    owner: "Vipul suryawanshi"
+    lastUpdate: "07 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Expense dashboard should add expense in dashboard "
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to employee -> expense -> dashboard"
+        - "Click on add expense button" 
+        - "Verify that add expense pop up should open"
+        - "Check spelling on all text contents"
+        - "Verify that there are five rows present at add expense pop up (Expense Category, Expense Date, Description, Total Amount, Status)"
+        - "Verify that expense category show added category list"
+        - "Verify that expense date open calendar"
+        - "Verify that desciption with default placeholder"
+        - "Verify that total amount display calculated amount automatically"
+        - "Verfy that there is upload receipt button"
+        - "Verify that there is add button"
+        - "Verify that there is close button with icon"
+        - "Fill all required fields and add expense on dashboard"
+        - "Verify that information we have filled in should get save properly and get displayes at dashboard"
+        - "Verify that there are five coloum present at employee expense dashboard (Expense Date, Process Date, Category, Total Amount, Status)"
+        - "Verify that there is view button"
+        - "Verify that there is edit button"
+        - "Verify that there is cancel button"
+    conditions:
+        - "Test fails if expense add expense button is not added expense in expense dashboard page"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "07 June, 2020" #set the last when this test was run
+    runBy: Vipul suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
