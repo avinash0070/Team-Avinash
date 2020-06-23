@@ -23,7 +23,7 @@ test:
         testPath: #set this with a valid path if test is automated
 testRun:
     status: pass #valid status are notRun, pass, fail, sometimeFail
-    date: "07 June, 2020" #set the last when this test was run
+    date: "21 June, 2020" #set the last when this test was run
     runBy: Vipul suryawanshi #name of the person running this testType
     duration: 15 seconds #time taken in seconds to run this test
     env: qa #valid value are dev, qa, production
