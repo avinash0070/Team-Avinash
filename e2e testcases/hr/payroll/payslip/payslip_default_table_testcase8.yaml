@@ -1,0 +1,34 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payslip"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "20 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Payslip dashboard show payslip table after adding employee"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to HR -> Payroll -> Payslip"
+        - "Verify that there is employee added in employee dashboard"
+        - "Verify that added employee show in payslip dashboard with id , name , last payroll , payroll start date , last payout & view icon"
+        - "Verify that when we just add employee in payslip dashboard shows only id & name field"
+        - "Verify that before completion of first payroll last payout , payroll start date & last payout fields should be empty"
+        - "Verify that it contain view icon"
+        - "Verify that when payslip table is empty it shows 'Sorry , no record found for this page' message"
+        conditions:
+        - "Test fails if all fields of payslip table is empty"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "20 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 40 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

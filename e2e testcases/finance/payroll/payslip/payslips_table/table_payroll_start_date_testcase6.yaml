@@ -1,0 +1,32 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payslip"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "20 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Payslip dashboard show 'Payroll start date' field after adding employee"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to Finance -> Payroll -> Payslip"
+        - "Verify that there is employee added in employee dashboard"
+        - "Verify that added employee show in payslip dashboard with 'Payroll start date' field"
+        - "Verify that 'Payroll start date' field contain start date of last payroll completed in oraganization"
+        conditions:
+        - "Test fails if 'Payroll start date' field is empty after completion of any one payroll"
+        - "Test fails if 'Payroll start date' field shows first payroll completed start date after completion of 3-4 payroll"
+     automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "20 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 40 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

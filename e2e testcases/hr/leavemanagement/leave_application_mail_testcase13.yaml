@@ -1,0 +1,54 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "18 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Leave application from employee mail should display leave details of employee"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Add Employee"
+        - "Go to HR -> Leave Management -> Policy"
+        - "Add policy"
+        - "Go to HR -> Leave Management -> Employee"
+        - "Update leave balance"
+        - "Go to Employee -> Leave Management -> My Leaves"
+        - "Apply Leave"
+        - "Verify 'leave application from Anurag Agarwal' mail should sent to mailtrap"
+        - "Click on 'leave application from Anurag Agarwal'"
+        - "Verify 'From: Anurag Agarwal <mailer@afinpros.com>' field present in mails header"
+        - "Verify 'To: Anurag Agarwal <anurag@ambersoft.in>' field present in mails header"
+        - "Verify mails body should contain "Hi Anurag Agarwal, 
+          I would like to apply for a leave with following details: 
+          Starting Date :	2/7/2020
+          Number of Days :	2
+          Leave Type :	festive
+          Reason :	diwali
+          Please approve. 
+          'Approve'
+          'Reject' 
+          Regards,
+          Anurag Agarwal,
+          9970517056 
+          Powered By aFinPROs.com""
+        - "Verify 'Approve' 'reject' links are clickable"
+    conditions:
+        - "Test fails if leave application from employee mail do not display leave details of employee"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 25 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

@@ -1,0 +1,32 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payslip"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "20 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Payslip dashboard show 'Last Payout' field after adding employee"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to HR -> Payroll -> Payslip"
+        - "Verify that there is employee added in employee dashboard"
+        - "Verify that added employee show in Payslip dashboard with 'Last Payout' field"
+        - "Verify that 'Last Payout' field contain last completed payroll's payout value"
+        conditions:
+        - "Test fails if 'Last Payout' field shows empty after completion of any one payroll"
+        - "Test fails if 'Last Payout' field shows total of all completed Payroll's payout"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "20 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 40 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

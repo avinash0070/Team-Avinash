@@ -1,0 +1,50 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Employee"
+    owner: "Sneha Makade"
+    lastUpdate: "17 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+tests
+    summary: "Adding employee sends welcome email"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Settings"
+        - "Turn on internal emails"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Click on 'Add Employee' button"
+        - "Fill all the mandatory fields"
+        - "Verify added employee is present at dashboard"
+        - "Verify employee welcome mail sent to mailtrap"
+        - "Click on 'Amber SoftTech Systems Pvt. Ltd. adds you as an employee' mail"
+        - "Verify 'From: Anurag Agarwal <mailer@afinpros.com>' field is present in mails header"
+        - "Verify 'To: tisha <tisha@g.com>, tisha <tisha@gmail.com>' field is present in mails header for personal and company email"
+        - "Verify in mail at right top 'aFinPROs' logo is present"
+        - "Verify email body contains "Dear tisha,
+          Welcome to Amber SoftTech Systems Pvt. Ltd., we are excited to have you aboard and can't wait to see what we will accomplish as a team. Your employee id is- 04 and joining date is- 1/1/2020. 
+          We at Amber SoftTech Systems Pvt. Ltd. use aFinPROs, a cloud based portal, to manage our HR and Finance processes. Your account has been created on the same with both, your personal email address and company email address. Further onwards, you are requested to use the company email account for all employee related activities like managing leaves and expenses. You can use your personal account to manage your payslips and personal finance. 
+          You will receive an email on both of your respective email accounts to verify them and to set the password. If you already have a personal account on the portal you will only receive the verification mail on your company email address. 
+          If you have any other questions, please contact me directly via phone or email.  
+          Regards,
+          Anurag Agarwal
+          Phone: 9970517056
+          Powered By aFinPROs.com""
+    conditions:
+        - "Test fails if, adding employee does not send welcome email, and when email is sent then it should contain all contents as mentioned in test steps"
+    automation: 
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "17 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 20 seconds #time taken in seconds to run this test
+
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

@@ -1,0 +1,32 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Avinash"
+    lastUpdate: "20 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Record field should show first 50 records of 'PO' sent"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Vendor -> 'PO' sent"
+        - "Verify that the default page is 'PO' sent dashboard page"
+        - "Verify that left menu 'PO' sent is highlighted"
+        - "Check spelling on all text contents"
+        - "Default value of records field is set to 50"
+        - "Verify that there is 50 purchase order present at dashboard"
+    conditions:
+        - "Test fails, if default 'PO' sent dashboard list is not according to record field value"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "20 May, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

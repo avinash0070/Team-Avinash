@@ -1,0 +1,32 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "PT"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "22 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "PT dashboard show pagination according to 50 record."
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to HR -> Payroll -> PT"
+        - "verify that the default page is pt dashboard"
+        - "Verify in pagination field it shows  1 - 0 of 0 & next/previous button"
+        - "If there are 100 records it shows 1 - 50 of 100 if record set to 50"
+        - "For next page it starts from 51 - 100 of 100 & record set to 20"
+    conditions:
+        - "Test fails, when paigination set to 50 records is not showing according to record & if click on next page & it shows same entries"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "22 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 4 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

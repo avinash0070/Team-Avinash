@@ -1,0 +1,46 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payroll"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "2 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Payroll dashboard show verify payroll icon"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to Finance -> Payroll"
+        - "Verify that after verification of payroll shows icon 'Make Payment'"
+        - "Click on make payment icon"
+        - "Verify that after clicking on make payment icon open payroll pop up with 'next' button"
+        - "Verify that on pop up it shows start datr, employee count, employee payout,status & Particular payroll month & year"
+        - "Verify that inside table shows emp id, name, ctc(per month),earnings,deduction,benefits,netpay fields"
+        - "Verify that all employee shows on pop up whose payroll are verified"
+        - "Select the employee whose payment we have to complete"
+        - "Verify that if not select any employee for completion of payment then it shows error 'At least one employee must be selected'"
+        - "Verify that at least one employee is selected"
+        - "Click on 'Next' button"
+        - "After clicking on next button open 'payroll amount' pop up"
+        - "Verify that pop up shows emp id,name,netpay,pending amount,payment fields with previous & next button"
+        - "Click on 'next' button"
+        - "Verify that after clicking on next button open 'payroll payment' pop up"
+        - "Verify that pop up shows pending amount & paid amount fields"
+        - "Verify that pop up shows 'Payment mode' field with cheque/dd,bank,cash option"
+        - "Select any one option & click on 'make payment' button"
+        - "Verify that payroll is getting completed & status change to 'Completed'"
+    conditions:
+        - "Test fails if after verifying payroll status not change to 'verified'"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "2 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 5 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

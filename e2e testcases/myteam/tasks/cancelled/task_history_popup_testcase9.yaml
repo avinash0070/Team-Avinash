@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Task"
+    owner: "Jafar Pathan"
+    lastUpdate: "17 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Cancelled task history should show on history pop-up"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Go to MyTeam -> Tasks -> Pending"
+        - "Click on 'Add Task' button"
+        - "'Pending Task Details' pop-up should be open"
+        - "Fill all required fields and click on 'Add' button"
+        - "Verify that task added by manager listed on pending task dashboard"
+        - "Click on action icon, select action item 'Cancel'"
+        - "'Cancel task' pop-up should open with one field (comment)"
+        - "Verify confirmation message and click on 'Yes' button"
+        - "Go to MyTeam -> Task -> Cancelled"
+        - "Verify that pending task moved to the cancelled task dashboard"
+        - "Verify that all team members cancelled task are listed in cancelled task dashboard"
+        - "Verify two action icon (view, history) are displayed with cancelled task"
+        - "Click on history icon, history pop-up should be open with cancelled task history details"
+    conditions:
+        - "Test fails if cancelled task history details not showing on history pop-up"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: 17 June, 2020 #set the last when this test was run
+    runBy: Jafar pathan #name of the person running this testType
+    duration: 30 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

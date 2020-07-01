@@ -1,0 +1,38 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "05 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Selected event based leave cycle should add policy at dashboard with 'accumulate no' and 'encashment yes'"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Go to HR -> Leave Management -> Policy"
+        - "Click on 'Add Policy' button, it should open policy detail popup form"
+        - "Change select leave cycle to event based"
+        - "Enter leave type and no. of leaves in leave type and in no. of leaves input field"
+        - "Change accumulate to 'No'"
+        - "Verify default encashment 'yes' selected"
+        - "Verify if accumulate field is yes then accumulate upto field should display"
+        - "Click on 'Add' button in policy detail popup form"
+        - "Verify policy with event based leave cycle 'accumulate no' and 'encashment yes' is display at dashboard"
+        - "Verify policy added is present at dashboard with view, edit and cancel icon"
+    conditions:
+        - "Test fails if selected event based leave cycle policy do not display at dashboard with 'accumulate no' and 'encashment yes'"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "05 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 14 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

@@ -1,0 +1,39 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Loan"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "27 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Loan dashboard show 'View' icon after adding employee"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to HR -> Payroll -> Loan"
+        - "Verify that there is view icon which is clickable"
+        - "Verify that after clicking on view icon opens 'Loan History' pop up"
+        - "Verify that 'Loan History' pop up shows id , name , ctc & date field"
+        - "Verify that 'Loan History' pop up shows payroll & paid fields tabel"
+        - "Verify that 'Loan History' pop up shows loan amount , loan date & status fields tabel"
+        - "Veify that in 'Payroll' field shows completed payroll month if in that month Loan is deducted"
+        - "Verify that if loan amount is remaining then status shows 'Pending'"
+        - "Verify that if loan amount is paid then status shows 'Paid'"
+        - "Veify that in 'Paid' field shows completed payroll's amount which is deducted in perticular month"
+        - "Verify that at top-right corner it shows 'Cancel' icon"
+        - "Verify that after clicing on cancel icon pop up gets cancel"
+        conditions:
+        - "Test fails if 'View' pop up not open"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "27 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

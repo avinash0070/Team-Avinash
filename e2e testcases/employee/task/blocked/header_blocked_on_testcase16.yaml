@@ -1,0 +1,38 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Blocked task"
+    owner: "Jafar Pathan"
+    lastUpdate: "14 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Blocked task blocked on header is displayed on blocked task dashboard"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Go to Employee -> Tasks -> Pending"
+        - "Click on 'Add Task' button"
+        - "Fill all required fields and click 'Add' button"
+        - "Verify that added task listed on pending task dashboard"
+        - "Click on action icon, select action item 'Block'"
+        - "Fill all required fields and click 'Block' button"
+        - "Go to Employee -> Tasks -> Blocked"
+        - "Verify that pending task moved to the blocked task dashboard"
+        - "Verify blocked task is listed in blocked task dashboard"
+        - "Blocked task dashboard have seven column (Task Id, Task Type, Description, Blocked Date, Estimated Duration, Priority, Blocked On)"
+        - "Verify that blocked task blocked on whom name should be listed in blocked on heading column"
+    conditions:
+        - "Test fails if blocked task blocked on whom name not displayed in blocked on heading column"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: 14 May, 2020 #set the last when this test was run
+    runBy: Jafar pathan #name of the person running this testType
+    duration: 25 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

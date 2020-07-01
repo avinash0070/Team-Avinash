@@ -1,0 +1,31 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payroll"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "2 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Payroll dashboard show 'CTC(Per month)' field after adding payroll"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to Finance -> Payroll"
+        - "Verify that after processing payroll it shows 'CTC(Per month)' field in table"
+        - "Verify that 'CTC(Per month)'' field not shown on before starting & processing Payroll"
+        - "Verify that after process payroll it shows total of all employees ctc correct"
+        conditions:
+        - "Test fails if 'CTC(Per month)' field shows wrong total of ctc after adding payroll"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "2 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

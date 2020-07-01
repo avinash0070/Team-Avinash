@@ -1,0 +1,38 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Cancelled task"
+    owner: "Jafar Pathan"
+    lastUpdate: "20 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Cancelled task details should show on view pop-up"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Go to Employee -> Tasks -> Pending"
+        - "Click on 'Add Task' button"
+        - "Fill all required fields and click 'Add' button"
+        - "Verify that added task listed on pending task dashboard"
+        - "Click on cancel action icon"
+        - "Verify confirmation message and click 'Yes' button"
+        - "Go to Employee -> Tasks -> Cancelled"
+        - "Verify that pending task moved to the cancelled task dashboard"
+        - "Verify cancelled Task is listed in cancelled Task dashboard"
+        - "Verify one action icon (view) are displayed with cancelled task"
+        - "Click on view icon, view pop-up should be open with cancelled task details"
+    conditions:
+        - "Test fails if cancelled task details not showing on view pop-up"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: 20 May, 2020 #set the last when this test was run
+    runBy: Jafar pathan #name of the person running this testType
+    duration: 30 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

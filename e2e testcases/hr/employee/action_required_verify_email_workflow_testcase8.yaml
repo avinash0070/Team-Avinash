@@ -1,0 +1,45 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Employee"
+    owner: "Sneha Makade"
+    lastUpdate: "17 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Action required verify email workflow"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Settings"
+        - "Turn on internal emails"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Click on 'Add Employee' button"
+        - "Fill all the mandatory fields"
+        - "Verify added employee is present at dashboard"
+        - "Verify employee welcome mail sent to mailtrap"
+        - "Click on 'Action Required: Verify email' mail"
+        - "Verify 'From: aFinPROs Mailer <mailer@afinpros.com>' field is present in mails header"
+        - "Verify 'To: tisha <tisha@amber.com>' field is present in mails header"
+        - "Verify email body contains "Hi tisha, 
+          Before we get started with your aFinPROs account, click on the link below to complete email verification process.
+          Verify email and reset password 
+          Regards,
+          aFinPROs team""
+    conditions:  
+        - "Test fails if action required verify email workflow does not work proper"
+    automation: 
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "17 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 20 seconds #time taken in seconds to run this test
+
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

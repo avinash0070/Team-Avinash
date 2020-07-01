@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "11 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Payroll end to end testcase of process & complete payroll from different HR & finance person"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Login with 'Super Admin' credentials"
+        - "Go to HR -> Employee"
+        - "Add 4 employee"
+        - "Assign HR , Finance role to all 4 employee"
+        - "Go to HR -> Payroll"
+        - "Add salary details from first employee's company login"
+        - "Verify that salary detail is added in third, first, second, fourth employee's company login"
+        - "Add payroll from second employee's company login"
+        - "Verify that payroll is added in third, first, second, fourth employee's company login"
+        - "Start & process payroll from third employee's company login"
+        - "Verify that payroll is process in third, first, second, fourth employee's company login"
+        - "Verify & make payment from fourth employee's company login"
+        - "Verify all employees company login that payroll is completed & shows payslip of all employee"
+    conditions:
+        - "Test fails if consistency not shown in between 4 employee's company login"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "11 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 20 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

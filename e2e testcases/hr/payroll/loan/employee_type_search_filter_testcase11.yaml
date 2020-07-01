@@ -1,0 +1,36 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Loan"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "18 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Loan dashboard show search filter according to employee Type"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to HR -> Payroll -> Loan"
+        - "verify that the default page is loan dashboard"
+        - "Verify that on dashboard shows loan search dropdown filter"
+        - "Verify that in search dropdown contain All , employee , alumni options"
+        - "Search by All or employee or alumni"
+        - "Verify that deault option show is employee"
+        - "Verify that after selecting all option in dropdown dashboard show employee & alumni entries"
+        - "Verify that after selecting employee option in dropdown dashboard show employee entries"
+        - "Verify that after selecting alumni option in dropdown dashboard show alumni entries"
+    conditions:
+        - "Test fails if loan search result not search according to employee or alumni or all type"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 5 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

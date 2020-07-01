@@ -1,0 +1,43 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Task"
+    owner: "Jafar Pathan"
+    lastUpdate: "8 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Task added by employee can be marked as 'complete' by employee"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Login with 'employee1' credentials"
+        - "Go to Employee -> Tasks -> Pending"
+        - "Click on 'Add Task' button"
+        - "Enter employee1 name in 'Assigned to' field"
+        - "Fill all required fields and click 'Add and Run' button"
+        - "Verify that added task listed in running task dashboard"
+        - "Go to Employee -> Tasks -> Running"
+        - "Click on action icon, select action item 'Complete'"
+        - "'Complete Task' pop-up should open with three field (Completion date,Completion time,comment)"
+        - "Fill all required fields and click on 'Yes' button"
+        - "Go to Employee -> Tasks -> Completed"
+        - "Verify that the running task moved to completed task dashboard"
+        - "Login with 'HR' credentials"
+        - "Go to HR -> Tasks -> Completed"
+        - "Verify that task completed by employee1 is listed on completed task dashboard"
+        - "Verify that all org members completed tasks are listed in completed task dashboard"
+    conditions:
+        - "Test fails if task completed by employee is not listed on completed task dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: 8 June, 2020 #set the last when this test was run
+    runBy: Jafar pathan #name of the person running this testType
+    duration: 300 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

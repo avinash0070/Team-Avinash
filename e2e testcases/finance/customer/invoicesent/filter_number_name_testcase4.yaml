@@ -1,0 +1,33 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Avinash"
+    lastUpdate: "26 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Added invoice search result according to search by invoice no. or customer name"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Customer -> Invoice sent"
+        - "Verify that the default page is invoice sent"
+        - "Verify that left menu 'invoice sent' is highlighted"
+        - "Check spelling on all text contents"
+        - "Verify that in search filter it shows placeholder 'search by invoice no. or customer name'"
+        - "If search by invoice no. or customer name not match with added customer entries then it shows 'Sorry, no record found for this page'"
+        - "If search by invoice no. or customer name match then shows particular entry on dashboard"
+    conditions:
+        - "Test fails, if added invoice search result not search according to search by invoice no. or customer name"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "26 May, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

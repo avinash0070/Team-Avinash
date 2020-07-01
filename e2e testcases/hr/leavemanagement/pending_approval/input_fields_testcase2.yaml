@@ -1,0 +1,38 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "10 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Input field should get display at pending approval dashboard after added leaves of employee"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Go to HR -> Leave Management -> Pending Approval"
+        - "Verify default sorry, no record found for this page is display at dashboard"
+        - "Go to Employee -> Leave Management -> My Leaves"
+        - "Click on 'Apply Leave' button, apply leaves popup form should get open"
+        - "Fill all the mandatory fields with proper information"
+        - "Click on 'Add' button in apply leaves popup form"
+        - "Verify leave gets display at dashboard with status pending"
+        - "Go to HR -> Leave Management -> Pending Approval"
+        - "Verify pending approval for applied leave present at dashboard with approve/reject icon"
+        - "Verify id, name, start date, no. of days, leave type, description input fields are present at dashboard"
+    conditions:
+        - "Test fails if input fields do not get display at pending approval dashboard after added leaves of employee"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "10 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

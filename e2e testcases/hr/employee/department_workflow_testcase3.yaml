@@ -1,0 +1,48 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Employee"
+    owner: "Sneha Makade"
+    lastUpdate: "17 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Add department workflow"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Click on 'Add Employee' button"
+        - "Fill all the mandatory fields"
+        - "Click on select department field, verify it do not open dropdown"
+        - "Close employee details form"
+        - "Go to HR -> Employee -> Department"
+        - "Add department with enable"
+        - "Add department with disable"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Click on 'Add Employee' button"
+        - "Fill all the mandatory fields"
+        - "Click on select department field, verify it open dropdown of departments added"
+        - "Verify disabled department is not present in select department dropdown"
+        - "Select department, and add employee"
+        - "Verify added employee should get display at dashboard"
+        - "Click on view, verify added department is present in employee details form"
+        - "Login with employee credentials"
+        - "Verify on profile dashboard added department should be present"
+    conditions:
+        - "Test fails if add department workflow does not work proper"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "17 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 20 seconds #time taken in seconds to run this test
+
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

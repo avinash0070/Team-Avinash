@@ -1,0 +1,47 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Task"
+    owner: "Jafar Pathan"
+    lastUpdate: "29 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Completed task created by header is displayed on completed task dashboard"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Go to HR -> Tasks -> Pending"
+        - "Click on 'Add Task' button"
+        - "'Pending Task Details' popup should be open"
+        - "Fill all required fields and click on 'Add' button"
+        - "Verify that added task listed on pending task dashboard"
+        - "Go to Employee -> Tasks -> Pending"
+        - "Verify that task added by hr listed on pending task dashboard"
+        - "Click on action icon, select action item 'Run Now'"
+        - "'Run Task' popup should be open"
+        - "Verify confirmation message and click on 'Yes' button"
+        - "Go to Employee -> Tasks -> Running"
+        - "Verify that task run by employee listed on running task dashboard"
+        - "Click on action icon, select action item 'Complete'"
+        - "'Complete Task' popup should be open"
+        - "Verify confirmation message and click on 'Yes' button"
+        - "Go to HR -> Tasks -> Completed"
+        - "Verify that task completed by employee moved to the completed task dashboard"
+        - "Verify that all org members completed task are listed in completed Task dashboard"
+        - "Completed task dashboard have seven column (Task Id, Task Type, Description, Completed Date, Estimated Duration, Work Duration, Created By)"
+        - "Verify that completed task created by name should be listed in created by heading column"
+    conditions:
+        - "Test fails if completed task created by name not displayed in created by heading column"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: 29 May, 2020 #set the last when this test was run
+    runBy: Jafar pathan #name of the person running this testType
+    duration: 25 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

@@ -1,0 +1,36 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "PT"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "27 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "PT dashboard show 'View' icon after adding employee"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to HR -> Payroll -> PT"
+        - "Verify that there is view icon which is clickable"
+        - "Verify that after clicking on view icon opens ' Employee PT Details' pop up"
+        - "Verify that 'Employee PT Details' pop up shows id , name , company email , joining date & phone fields"
+        - "Verify that 'Employee PT Details' pop up shows payroll , employee cont pf , employer cont pf & total pf fields tabel"
+        - "Veify that in 'Payroll' field shows completed payroll month if in that month pt is deducted"
+        - "Veify that in 'PT' field shows completed payroll's pt amount which is deducted in perticular month"
+        - "Verify that at top-right corner it shows 'Cancel' icon"
+        - "Verify that after clicing on cancel icon pop up gets cancel"
+        conditions:
+        - "Test fails if 'View' pop up not open"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "27 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

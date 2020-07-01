@@ -1,0 +1,46 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "4 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "default salary -> structure page should show automatic component set to yes"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to HR -> Salary"
+        - "Verify that on salary dashboard shows edit structure button"
+        - "Click on edit structure button which open component structure"
+        - "Verify that there is 'Automatic Component :yes' is present on dashboard"
+        - "Verify that if set to "Yes", then it automatically calculates salary structure of an employee according to salary settings"
+        - "Verify that only one 'Earning' component can be set as "Remaining", which gets automatically calculated."
+        - "Verify that on pop up if we set automatic yes then component added in salary -> component then all component show on component structure pop up"
+        - "Verify that after component column there is type column"
+        - "Verify that only basic salary component contain 2 type i.e i)%CTC ii)fixed amount"
+        - "Verify that all other component except basic salary contain 3 type i)%CTC ii)% of basic iii)fixed amount"
+        - "Verify that after type column there is value column"
+        - "Verify that in value column user have to set value according to org rule"
+        - "Verify that value total should not go above 100%"
+        - "Verify that after value column there is remaining column"
+        - "Verify that except basic salary component all component contain checkbox to select remaining status"
+        - "Verify at least one component is selected as a remaining"
+        - "Click on set structure button"
+        - "Verify that on salary -> structure dashboard show 'Automatic Component :Yes'"
+        - "Verify that on salary -> structure dashboard show 'Remaining Component :Selected remaining component'"
+    conditions:
+        - "Test fails if salary -> structure pop-up does not show component after set automatic to yes"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "4 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

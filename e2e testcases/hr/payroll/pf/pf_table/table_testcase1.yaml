@@ -1,0 +1,32 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "PF"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "21 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "PF dashboard show 'Provident Fund' tabel after adding employee"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to HR -> Payroll -> PF"
+        - "Verify that there is 'Provident Fund' tabel which contain id , name , employee cont.pf , employer cont.pf , total pf fields"
+        - "Verify that 'Provident Fund' tabel contain view icon after adding employee"
+        - "Verify that before adding payroll employee cont.pf , employer cont.pf , total pf fields shows 0 value"
+        - "Verify that before total show Rupee icon"
+        conditions:
+        - "Test fails if 'Provident Fund' tabel not show with id , name , employee cont.pf , employer cont.pf , total pf & view icon"
+     automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "21 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

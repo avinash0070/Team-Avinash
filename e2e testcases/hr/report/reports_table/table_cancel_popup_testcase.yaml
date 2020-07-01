@@ -1,0 +1,34 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Reports"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "27 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Reports table show 'Cancel' icon which opens Pop up"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Reports"
+        - "Verify that there is 'Reports' table contain 'Cancel' icon"
+        - "Verify that after clicking on 'Cancel' icon it opens 'Cancel report' pop-up"
+        - "Verify that on pop-up it shows 'Are you sure you want to cancel report from date ?'"
+        - "Verify that on pop-up shows 'Yes' & 'No' button"
+        - "Verify that after clicking on 'Yes' button entry should remove from report dashboard"
+        - "Verify that after clicking on 'No' button entry should not remove from report dashboard"
+        conditions:
+        - "Test fails if pop-up 'Yes' & 'No' button not show"
+     automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "27 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

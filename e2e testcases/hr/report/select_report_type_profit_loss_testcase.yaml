@@ -1,0 +1,36 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Reports"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "25 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Select report type as 'Profit and Loss' option"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to Finance -> Reports"
+        - "Verify that there is 'Add Reports' button"
+        - "Verify that 'Add Reports' button open add report pop-up"
+        - "Verify that add reports pop-up contain 'Select Report type' field"
+        - "Verify that 'Select Report type' field as a 'Profit and Loss' option"
+        - "Verify that 'From date' & 'To date' is selected"
+        - "Verify that Pop-up contain 'Add' button"
+        - "Click on 'Add' button after selecting 'Profit and Loss' as a report type"
+        - "Verify that after clicking on 'Add' button entry gets added on dashboard"
+        conditions:
+        - "Test fails if entry not added on reports dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "25 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 4 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

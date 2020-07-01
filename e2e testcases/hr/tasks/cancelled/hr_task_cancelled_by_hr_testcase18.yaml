@@ -1,0 +1,46 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Task"
+    owner: "Jafar Pathan"
+    lastUpdate: "8 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Task added by 'HR' can be cancelled by 'HR'"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Login with 'HR' credentials"
+        - "Go to HR -> Tasks -> Pending"
+        - "Click on 'Add Task' button"
+        - "Enter employee1 name in 'Assigned to' field"
+        - "Fill all required fields and click 'Add' button"
+        - "Verify that task added by 'HR' is listed on pending task dashboard"
+        - "Login with Employee1 credentials"
+        - "Go to Employee -> Task -> Pending"
+        - "Verify that the task added by 'HR' is listed in Employee1's pending Task dashboard"
+        - "Login with 'HR' credentials"
+        - "Go to HR -> Tasks -> Pending"
+        - "Verify that task added by 'HR' is listed on pending task dashboard"
+        - "Click on action icon, select action item 'Cancel'"
+        - "'Cancel task' pop-up should open with one field (comments)"
+        - "Entered employee1 name in 'Cancelled On Whom' field and fill all required fields"
+        - "click 'Block' button"
+        - "Go to HR -> Tasks -> Cancelled"
+        - "Verify that pending task moved to the cancelled task dashboard"
+        - "Verify that all org members cancelled tasks are listed in cancelled task dashboard"
+    conditions:
+        - "Test fails if task cancelled by 'HR' is not listed on cancelled task dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: 8 June, 2020 #set the last when this test was run
+    runBy: Jafar pathan #name of the person running this testType
+    duration: 300 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

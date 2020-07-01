@@ -1,0 +1,43 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "08 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Selected month should display only that month related employee list at dashboard"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Go to HR -> Employee -> Dashboard"
+        - "Click on 'Add Employee' button, it should open employee details popup form"
+        - "Fill all the mandatory fields, click on 'Next' button in employee details popup form"
+        - "Verify employee bank details popup form should get open"
+        - "Click on 'Add' button in employee bank details popup form, employee should get added at dashboard"
+        - "Go to Leave Management -> Employee"
+        - "Go to HR -> Salary"
+        - "Edit the settings, edit the structure, set the structure"
+        - "Click on details, click on edit, add the salary details"
+        - "Go to HR -> Payroll -> Dashboard"
+        - "Click on add payroll, select the month, year and date and start and process that payroll"
+        - "Go to Finance -> Payroll"
+        - "Click on verify and do payment also of that payroll"
+        - "Go to HR -> Leave Management -> Employee"
+        - "Verify the month of which we have did payroll it gets added below all dropdown ex.february 2020"
+        - "Change dropdown to february 2020, it should display list of employee whose payroll done for that specific month"
+    conditions:
+        - "Test fails if selected month do not displays respected month employee list"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "08 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 20 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

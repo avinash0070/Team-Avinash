@@ -1,0 +1,41 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary TDS"
+    owner: "Sneha Makade"
+    lastUpdate: "25 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Declaration dashboard should show status as request change"
+    browsers:
+        - "Chrome"
+        - "Chromium"
+    steps:
+        - "Go to EMPLOYEE -> Salary TDS -> Declaration"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Declaration' button, add declaration popup form should get open"
+        - "Fill all the mandatory fields, click on 'Add' button, declaration should get display at dashboard"
+        - "Verify status of added declaration should display as pending declaration approval"
+        - "Go to 'Finance' tab, click on salary tds, it should show three submenus like declaration, pending declaration approval, pending proof approval"
+        - "Click on pending declaration approval, it should show added declaration from employee -> salary tds tab, with view and action icon"
+        - "Click on action icon, it should show approve, reject, change request"
+        - "Click on change request, change request  popup form should get open, add comment in comment input field"
+        - "Click on 'Change Request' button in change request  popup form, popup should get closed, and that declaration should go in declaration dashboard with status request change"
+        - "Go to 'Employee' tab, click on salary tds, declaration"
+        - "Verify added declarations status now get changed into request change with view, edit and cancel icon"
+        conditions:
+        - "Test fails if added declarations status do not get changed into request change"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "25 May, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 20 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

@@ -1,0 +1,44 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "18 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Leave balance for policy workflow should work properly"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Add Employee"
+        - "Go to HR -> Leave Management -> Policy"
+        - "Verify default paid policy should present at dashboard with leave cycle type 'monthly' and no. of leaves 1.5"
+        - "Add policy with type 'weekly' with no. of leaves 1"
+        - "Add policy with type 'yearly' with no. of leaves 2"
+        - "Add policy with type 'quarterly' with no. of leaves 1"
+        - "Open the terminal"
+        - "On the terminal cd ahire/commands"
+        - "Run script from command line 'node leave_balance_for_policy.js"
+        - "Verify employees paid policy should get updated at '1st date of each month' after running script"
+        - "Verify employees policy of type monthly should get updated at 'monday of each week' after running script"
+        - "Verify employees policy of type yearly should get updated at '1st of jan' after running script"
+        - "Verify employees policy of type quarterly should get updated at '1st of jan', '1st of april', '1st of july' and '1st of oct' after running script"
+        - "Verify total balance changed to 5.5 if script run at 1st of jan and if its monday"
+        - "Click on history icon, verify description for each policy is 'policy leave balance added' and status should be 'updated'" 
+    conditions:
+        - "Test fails if leave balance for policy workflow do not work proper"
+    automation: 
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 18 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

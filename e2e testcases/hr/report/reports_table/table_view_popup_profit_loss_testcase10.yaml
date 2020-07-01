@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Reports"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "26 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Reports view pop-up shows 'Particulars' & 'Amounts' with report type as a 'Profit and Loss'"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Reports"
+        - "Verify that there is 'Reports' table contain 'View' icon"
+        - "Verify that after clicking on 'view' icon it opens 'Reports' pop-up"
+        - "Verify that on pop-up it shows report type as a 'Profit and Loss'"
+        - "Verify that when selected report type is 'Profit and Loss' then in 'Particulars' it shows Income & Expense ledger"
+        - "Verify that according to 'Income & Expense' ledger values shown in 'Amounts'"
+        - "Verify that after 'Income' it shows 'Total'"
+        - "Verify that after 'Expense' it shows 'Total'"
+        - "Verify that at last 'Profit and Loss Account' field shows in 'Particulars'"
+        - "Verify that in 'Profit and Loss Account' field shows Income + Expense or Income - Expense"
+        - "Verify that value of 'Profit and Loss Account' field is positive then in Amounts value should be Positive & it is consider as a profit"
+        - "Verify that value of 'Profit and Loss Account' field is Negative then in Amounts value should be Negative & it is consider as a Loss"
+        - "Verify that value of 'Profit and Loss Account' field is matches with 'Balance sheet'"
+        conditions:
+        - "Test fails if 'Profit and Loss Account' field shows wrong value"
+     automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "26 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

@@ -1,0 +1,34 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Reports"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "26 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Reports table show 'View' icon which opens pop-up"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Reports"
+        - "Verify that there is 'Reports' table contain 'View' icon"
+        - "Verify that after clicking on 'View' icon it opens reports pop-up"
+        - "Verify that on pop-up at top it shows organization name"
+        - "Verify that after organization name shows report type"
+        - "Verify that after report type shows period from & to date for which report generated"
+        - "Verify that after period shows 'Particulars' & 'Amounts' table"
+        conditions:
+        - "Test fails if pop-up shows wrong 'Organization name' & 'Report type' & 'Period'"
+     automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "26 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

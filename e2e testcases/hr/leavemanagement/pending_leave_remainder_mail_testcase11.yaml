@@ -1,0 +1,56 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "19 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Pending Leave Reminder should display pending leave approval remainder of employee"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Add  6 Employee"
+        - "Assign 'HR' role to one of the employee"
+        - "Assign one manager to two employee and one manager to two employee i.e team of 3 persons"
+        - "Go to HR -> Leave Management -> Policy"
+        - "Add policy"
+        - "Go to HR -> Leave Management -> Employee"
+        - "Update leave balance of each employee"
+        - "Click on apply leave icon"
+        - "Fill all the mandatory fields"
+        - "Apply leave for present day or leave including present day"
+        - "Login with employee credentials"
+        - "Apply leave"
+        - "Open the terminal"
+        - "On the terminal cd ahire/commands"
+        - "Run script from command line 'node company_leaves_reminder.js'"
+        - "Verify 'pending leave reminder' mail sent to mailtrap for 'manager' person"
+        - "Click on 'pending leave remainder'"
+        - "Verify 'From: aFinPROs Mailer <mailer@afinpros.com>' this should present in mails header"
+        - "Verify 'To: tisha <tisha@amber.com>' this should present in mails header"
+        - "Verify mails body should contains "Hi tisha,
+          Pending leave approval reminder 
+          EMP ID	EMP NAME	START DATE	NO. OF DAYS	LEAVE TYPE	REASON
+            4	      tisha	    30/6/2020	    1	       sick	      going to hometown 
+          Regards,
+          aFinPROs Team 
+          Powered By aFinPROs.com""
+    conditions:
+        - "Test fails if pending leave reminder do not display pending leave approval remainder of employee"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "19 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 30 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

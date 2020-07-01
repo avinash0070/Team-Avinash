@@ -1,0 +1,59 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "19 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Company leave calendar mail should display employee details of which having leave for present day"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Add  6 Employee"
+        - "Assign 'HR' role to one of the employee"
+        - "Assign one manager to two employee and one manager to two employee i.e team of 3 persons"
+        - "Go to HR -> Leave Management -> Policy"
+        - "Add policy"
+        - "Go to HR -> Leave Management -> Employee"
+        - "Update leave balance of each employee"
+        - "Click on apply leave icon"
+        - "Fill all the mandatory fields"
+        - "Apply leave for present day or leave including present day"
+        - "Login with employee credentials"
+        - "Apply leave"
+        - "Open the terminal"
+        - "On the terminal cd ahire/commands"
+        - "Run script from command line 'node company_leaves_reminder.js'"
+        - "Verify 'company leave remainder' mail sent to mailtrap for 'HR' person"
+        - "Click on 'Company leave calendar'"
+        - "Verify 'From: aFinPROs Mailer <mailer@afinpros.com>' this should present in mails header"
+        - "Verify 'To: Anurag Agarwal <anurag@ambersoft.in>' this should present in mails header"
+        - "Verify mails body should contains "Hi Anurag Agarwal,
+          Following employees are on leave today,
+           EMP ID	EMP NAME	START DATE	NO. OF DAYS	LEAVE TYPE	REASON
+            02	  rani	    19/6/2020	    1       	sick	sever headache
+            03	  Kartik  	18/6/2020	    14      	festive	home quarantine
+            04	  tisha	    19/6/2020   	1	        Paid Leave	medical emergency
+            06	  payal	    19/6/2020	    1	        Paid Leave	not feeling well
+          Regards,
+          aFinPROs Team
+          Powered By aFinPROs.com""
+    conditions:
+        - "Test fails if company leave calendar mail do not display employee details of which having leave for present day"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "19 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 30 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

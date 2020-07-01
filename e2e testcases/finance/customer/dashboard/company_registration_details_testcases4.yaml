@@ -1,0 +1,44 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Avinash"
+    lastUpdate: "18 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Add company customer with company registration details pop-up"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Customer -> Dashboard -> Add Customer -> Add Customer Details -> Add Company Registration Details"
+        - "Verify that the default page is customer dashboard"
+        - "Verify that left menu 'Customer' is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Close' button, the search customer pop-up should get Closed"
+        - "Click on 'Next' button, the select pop-up should go to the Add Late Charge Details pop-up"
+        - "Click on 'Previous' button, the search pop-up should go to the previous Add Customer Details pop-up"
+        - "Verify that there is one drop down 'GST Registration' type (Unregistered, Regular, Consumer and Composition)"
+        - "Verify that there is two input fields (Vendor CIN and Registered address)
+        - "Verify that the 'GST Registration' type select as ( Regular, Consumer and Composition). The Additional GST & Address field is display"
+        - "Verify that the 'Additional GST' & Address have 2 input fields (GST number and Address)
+        - "Verify that the 'Vendor CIN' should be of length 21"
+        - "Verify that the 'GST' number  field is required and should be of length 15"
+        - "Click on 'Additional GST & Address', it's create new row of (GST number and Address)"
+        - "Click on 'Close' button, it's delete row of (GST number and Address)"
+        - "Verify that information we have filled in pop-up should get save properly and get displays at dashboard"
+    runBy: Avinash #name of the person running this testType
+    conditions:
+        - "Test fails, if company customer with company registration details not displayed at dashboard"
+    automation:
+        status: manual #this test is automated or 
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 May, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

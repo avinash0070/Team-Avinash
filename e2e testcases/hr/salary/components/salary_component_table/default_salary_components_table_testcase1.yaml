@@ -1,0 +1,32 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "4 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Default salary components table should show all components"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to HR -> Salary"
+        - "Verify that on components dashboard show salary component table"
+        - "Verify that salary component table show component, type, status frequency fields"
+        - "Verify that 10 default components are : 'Employer Cont ESIC, Employer Cont PF, Professional Tax, Employees Cont ESIC, Employees Cont PF,
+           Basic Salary, House Rent Allowance, Conveyance Allowance, LTA, Special Allowance'"
+    conditions:
+        - "Test fails if salary components table does not show with 10 default component"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "4 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

@@ -1,0 +1,36 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "4 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Default salary -> structure page should show automatic component set to no"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to HR -> Salary"
+        - "Verify that on salary dashboard shows edit structure button"
+        - "Click on edit structure button which open component structure"
+        - "Verify that there is 'Automatic Component :no' is present on dashboard"
+        - "Verify that if set to "No", then user does the manual calculation of salary structure of an employee according to salary settings."
+        - "Verify that None of the 'Earning' components need to be set as "Remaining"."
+        - "Click on set structure button"
+        - "Verify that on salary -> structure dashboard show 'Automatic Component :No'"
+        - "Verify that on salary -> structure dashboard show 'Remaining Component :NA'"
+    conditions:
+        - "Test fails if salary -> structure pop-up does not show after set automatic to no"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "4 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

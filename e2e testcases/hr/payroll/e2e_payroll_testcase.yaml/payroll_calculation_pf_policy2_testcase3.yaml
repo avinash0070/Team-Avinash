@@ -1,0 +1,144 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "9 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Payroll calculation for pf as per policy2"
+    browsers:
+        - "chrome"
+    steps:
+        - "Login with email : anurag@ambersoft.in & password : 12345678"
+        - "Go to HR -> Employee"
+        - "Add employee"
+        - "Go to HR -> salary -> settings"
+        - "Verify that 'PF , PT & ESIC' are enable"
+        - "Verify that PT state is Maharashtra selected"
+        - "Verify that PF policy is 'Minimum of 1800 and 12% of basic for both employee and employer'"
+        - "Go to HR -> salary -> components"
+        - "Verify that 10 default component present with status enable"
+        - "Go to HR -> salary -> details"
+        - "Add salary details for added employee"
+        - "Verify that added employee's ctc valid date is patch"
+        - "Enter employee's current ctc : 400000 & click on calculate button"
+        - "Enter basic salary :200000"
+        - "Enter house rent allowance :100000"
+        - "Enter conveyance allowance:3400"
+        - "Enter LTA :70000"
+        - "Enter special allowance :5000"
+        - "Verify that Employer cont esic & Employees cont esic show 0 value"
+        - "Verify that Employer Cont PF & Employees Cont PF show 21600 value"
+        - "Verify that in PT shows 2500"
+        - "Verify that all values is for 1 year"
+        - "Verfy that when ctc total & current ctc match then in benefits column esic & pf calculate automatically"
+        - "Verfy that when ctc total & current ctc match then in deduction column pt , pf & esic calculate automatically"
+        - "Verify that current ctc match with ctc total"
+        - "Click on next button it open 'Confirm Salary' pop up with previous & add button"
+        - "Verify that confirm salary pop up contain all salary details entered in salary details pop up"
+        - "Verify that after clicking on previous button it open salary details pop up with all salary detail"
+        - "Click on add button salary details get added"
+        - "Go to HR -> Payroll -> click on add payroll button"
+        - "Add payroll for the month 'January' & payroll start date is '1st jan 2020'"
+        - "Verify that added payroll month & year is greater than or equal to employee's joining date"
+        - "Click on add button"
+        - "Verify that payroll gets added on dashboard with start button & status is not started"
+        - "Click on start button it opens pop up with 'Please confirm, do you want to start the payroll ?' this message & yes or no button"
+        - "Click on yes button"
+        - "Verify that after clicking on yes button it show process & cancel button & status shows 'started'"
+        - "Click on process button it opens pop up with 'Please confirm, do you want to process the payroll ?' message & yes & no button"
+        - "Click on yes button"
+        - "Verify that payroll is process & status show 'Pending verify' & show cancel button"
+        - "Verify that on payroll dashboard show 'employee count : 1 , CTC(PER MONTH) :.33333.20 , employee payout : 29533.20'"
+        - "Click on view pop up show Emp Id : 1 , Name : Anurag Agarwal , ctc(per month) : 33333.20"
+        - "Verify that in earnings column shows 'Basic Salary :	16666.53
+           House Rent Allowance :	8333.42
+           Conveyance Allowance :	283.34
+           LTA :	5833.27
+           Special Allowance :	416.64
+           Total :	31533.20'"
+        - "Verify that in Benefits column shows Employer Cont ESIC :	0.00,
+           Employer Cont PF :	1800.00,
+           Total :	1800.00"
+        - "Verify that in deduction column it shows 'Professional Tax :	200.00
+           Employees Cont ESIC :	0.00
+           Employees Cont PF :	1800.00
+           Total :	2000.00'"
+        - "Verify that in netpay column shows 29533.20 which is (earnings - deduction)"
+        - "Verify that in ctc(per month) column shows 33333.20 which is (earnings + benefits)"
+        - "Go to Finance -> Payroll -> Dashboard -> click on verify payroll"
+        - "Verify after clicking on verify icon it open pop up with 'Are you sure you want to verify payroll : January 2020 ?' & yes & no button"
+        - "Click on yes button payroll is getting verified & shows status 'Verified'"
+        - "Go to Finance -> Account -> Dashboard"
+        - "It shows all ledger updated which is in earnings coulmn with dr entry & salary payable with cr entry except bank mode"
+        - "Verify that in account name : basic salary , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll for the month January 2020 , cr/dr :dr , Amount : 16666.53 , Balance:16666.53"
+        - "Verify that in account name : conveyance allowance , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll for the month January 2020 , cr/dr :dr , Amount : 283.34 , Balance:283.34"
+        - "Verify that in account name : Employees Cont PF , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll for the month January 2020 , cr/dr :cr , Amount : 1800 , Balance:1800"
+        - "Verify that in account name : House Rent Allowance , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll for the month January 2020 , cr/dr :dr , Amount : 8333.42 , Balance:8333.42"
+        - "Verify that in account name : LTA , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll for the month January 2020 , cr/dr :dr , Amount : 5833.27 , Balance:5833.27"
+        - "Verify that in account name : Professional Tax , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll for the month January 2020 , cr/dr :cr , Amount : 200.00 , Balance:200.00"
+        - "Verify that in account name : Salary Payable , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll for the month January 2020 , cr/dr :cr , Amount : 29533.20 , Balance:29533.20"
+        - "Verify that in account name : Special Allowance , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll for the month January 2020 , cr/dr :dr , Amount : 416.64, Balance:416.64"
+        - "Go to Finance -> Payroll -> Dashboard -> click on make payment"
+        - "Verify that after clicking on make payment icon it open pop up with all salary details,employee count & next button"
+        - "Verify that at least one employee is selected for payment"
+        - "Click on next button"
+        - "It open payroll amounts pop up with next & previous buton & contain pending amount :29132.96 , payment :29132.96 amount"
+        - "Click on next button it open payment mode pop up which contain 3 options for payment i.e cash , bank , cheque/dd & pending amount & paid amount values"
+        - "Click on cash mode & enter payment date & click on make payment button"
+        - "Go to Finance -> Account -> Dashboard"
+        - "Verify salary pyable ledger with dr entry & cash with cr entry"
+        - "Verify that in account name : Salary Payable , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll done for January 2020 , cr/dr :dr , Amount :29533.20 , Balance:0"
+        - "Verify that in account name : cash , click on ledger report"
+        - "Verify that in ledger report shows date :Jan 1, 2020 , remark : Payroll done for January 2020 , cr/dr :cr , Amount :29533.20 , Balance:-29533.20"
+        - "Verify that on dashboard status change to 'Completed'"
+        - "Verify that after completion of payroll mail go to employee's company mail id"
+        - "Verify that in email it shows payslip of particular month & contain all salary details"
+        - "Verify that in mail shows From:<mailer@afinpros.com> & To: <anurag@ambersoft.in> & Date:Tue, 09 Jun 2020 05:30:28 +0000"
+        - "Verify in mail it shows Payslip for (January 2020),Employee ID :	1	,
+          PAN :	AAAAC1234B,
+          Department : IT	,
+        	UAN : aa,
+        	Designation :	Manger
+        	PF Number :	aa,
+          Joining Date :	1/1/2020	
+          ESIC Number :	aa,
+          Number of Days :	31"
+        - "Verify that in earnings column shows 'Basic Salary :	16666.53
+           House Rent Allowance :	8333.42
+           Conveyance Allowance :	283.34
+           LTA :	5833.27
+           Special Allowance :	416.64
+           Total :	31533.20'"
+        - "Verify that in Benefits column shows 
+           Employer Cont PF :	1800
+           Total :	1800"
+        - "Verify that in deduction column it shows 'Professional Tax :	200.00
+           Employees Cont PF :	1800
+           Total :	2000'"
+        - "Verify that in mail CTC(A + B) =33333.20	, Gross(A) =31533.20,	Net amount(A - C) = 29533.20"
+    conditions:
+        - "Test fails if payroll calculation for pf as per policy2 is incorrect"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "9 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 4 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

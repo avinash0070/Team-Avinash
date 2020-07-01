@@ -1,0 +1,35 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "09 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Input fields should get display at dashboard after added calendar"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Leave Management -> Calendar"
+        - "Click on 'Add Calendar' button, leave calendar details popup form should get open"
+        - "Fill all the mandatory fields"
+        - "Click on 'Add' button, leave calendar details popup form should get close"
+        - "Verify added calendar should get display at dashboard"
+        - "Verify id, leave date, festival or event, and mandatory fields are present at dashboard"
+    conditions:
+        - "Test fails if input fields do not display at dashboard after added calendar"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "09 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 8 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

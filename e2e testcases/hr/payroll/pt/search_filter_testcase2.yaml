@@ -1,0 +1,34 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "PT"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "18 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "PT dashboard show default search entry according to Employee Id or name"
+    browsers:
+        - "chrome"
+    steps:
+        - "Go to HR -> Payroll -> PT"
+        - "verify that the default page is pt dashboard"
+        - "Verify that on dashboard shows pt search filter"
+        - "Verify that in search filter it shows placeholder 'search by employee Id or name'"
+        - "Search by employee id or name"
+        - "If search by employee id or name not match with added payroll entries then it shows 'Sorry , no record found for this page'"
+        - "If search by employee id or name match then shows perticular entry on dashboard"
+    conditions:
+        - "Test fails if pt search result not search according to employee id or name"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 5 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

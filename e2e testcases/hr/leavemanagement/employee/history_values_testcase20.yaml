@@ -1,0 +1,42 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "09 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Leaves history popup form should display all values with correct alignment"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Go to HR -> Employee -> Dashboard"
+        - "Click on 'Add Employee' button, it should open employee details popup form"
+        - "Fill all the mandatory fields, click on 'Next' button in employee details popup form"
+        - "Verify employee bank details popup form should get open"
+        - "Click on 'Add' button in employee bank details popup form, employee should get added at dashboard"
+        - "Go to Leave Management -> Employee"
+        - "Click on history icon, leaves history popup form should get open"
+        - "Verify id and name of employee should get display in popup form"
+        - "Verify respected fields values should get display below respected input field"
+        - "Click on edit icon, update leave balance by changing values of leave type balance"
+        - "Click on history icon, leave history popup should get open"
+        - "Verify description and status should get change with updated leave balance and updated status"
+        - "Click on apply leave icon, apply leaves popup form should get open, apply leave with reason and no. of days"
+        - "Click on history icon, leaves history popup open"
+        - "Verify reason added for leaves should get display below description field and status should get changes into approved"
+    conditions:
+        - "Test fails if leaves history popup form do not display all values with correct alignment "
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "09 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

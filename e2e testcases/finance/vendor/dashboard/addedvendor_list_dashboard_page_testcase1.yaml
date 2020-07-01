@@ -1,0 +1,38 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Avinash Shinde"
+    lastUpdate: "20 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Default dashboard should show added vendor on the page"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Vendor -> Dashboard"
+        - "Verify that the default page is vendor dashboard"
+        - "Verify that left menu 'Dashboard' is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Vendor' button"
+        - "Fill all required fields and click 'Add' button"
+        - "Verify that added vendor listed on vendor dashboard"
+        - "Verify that information we have filled in Vendor pop-up should get save properly and get display at dashboard"
+        - "Verify that there are six column present at dashboard (Vendor name, Vendor contact, Phone number, Email, My contact, Pan)"
+        - "Verify that there is 'Edit' icon"
+        - "Verify that there is 'View' icon"
+    conditions:
+        - "Test fails, if added vendor is not listed on vendor dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "20 May, 2020" #set the last when this test was run
+    runBy: Avinash shinde #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
+        

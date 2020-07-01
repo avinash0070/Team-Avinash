@@ -1,0 +1,43 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "18 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Positive numbers added in update balance workflow"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Add Employee"
+        - "Go to HR -> Leave Management -> Policy"
+        - "Add policy"
+        - "Go to HR -> Leave Management -> Employee"
+        - "Click on edit icon, add positive numbers in 'leave balance' column"
+        - "Update 'paid leave' balance as 10"
+        - "Update 'festive' balance as 20"
+        - "Verify total field display 'total: 30'"
+        - "Apply  paid leave of 2 days"
+        - "Verify at dashboard 'total leave balance display '28' value"
+        - "Click on edit"
+        - "Verify in edit leaves form paid leaves leave balance display '10 - 2 = 8' in leave balance column"
+        - "Verify in edit leaves form total field display value as  '30 - 2 = 28'"
+    conditions:
+        - "Test fails if positive numbers added in update balance workflow do not work proper"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 18 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

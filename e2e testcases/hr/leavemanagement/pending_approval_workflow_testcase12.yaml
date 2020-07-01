@@ -1,0 +1,37 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "18 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Leave applied from Employee -> Leave Management tab should send mail to mailtrap for pending approval"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Add Employee"
+        - "Go to HR -> Leave Management -> Policy"
+        - "Add policy"
+        - "Go to HR -> Leave Management -> Employee"
+        - "Update leave balance"
+        - "Go to Employee -> Leave Management -> My Leaves"
+        - "Apply Leave"
+        - "Verify 'leave application from Anurag Agarwal' mail should sent to mailtrap"
+    conditions:
+        - "Test fails if leave applied from Employee -> Leave Management tab does not send mail to mailtrap for pending approval"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 25 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

@@ -1,0 +1,33 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Reports"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "25 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Reports dashboard show pagination according to record."
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Reports"
+        - "Verify that the default page is reports dashboard"
+        - "Verify in pagination field it shows  1 - 0 of 0 & 'Next/Previous' button"
+        - "If there are 100 records it shows 1 - 10 of 100 if record set to 10"
+        - "If there are 100 records it shows 1 - 20 of 100 if record set to 20"
+        - "If there are 100 records it shows 1 - 50 of 100 if record set to 50"
+    conditions:
+        - "Test fails, when pagination set to 10 records is not showing according to record & if click on next page & it shows same entries"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "25 May, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 4 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

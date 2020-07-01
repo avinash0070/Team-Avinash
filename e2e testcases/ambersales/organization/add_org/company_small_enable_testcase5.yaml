@@ -1,0 +1,41 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Organization"
+    owner: "Sneha Makade"
+    lastUpdate: "02 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Add org should add organization with 'company' and 'small' and 'enable' selected"
+    browsers:
+        - "Chrome"
+        - "Chromium"
+    steps:
+        - "Go to AMBERSALES -> Organization"
+        - "Check spelling on all text contents"
+        - "Click on 'Add org' button, org details popup form should get open"
+        - "Enter organization name in organization name input field"
+        - "Enter url in organization url input field"
+        - "Verify default organization type company is selected"
+        - "Verify default organization size small is selected"
+        - "Enter pan no. in organization pan input field"
+        - "Click on enable, it should get selected"
+        - "Enter name of admin in admin name input field"
+        - "Enter email of admin in admin email input field"
+        - "Click on 'Add' button in org details popup form"
+        - "Verify added organization should display at dashboard with status 'enable'"
+    conditions:
+        - "Test fails if add org do not add organization with 'company' and 'small' and status 'enable' selected"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "02 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 12 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

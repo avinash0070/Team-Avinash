@@ -1,0 +1,37 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payroll"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "3 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "TDS default dashboard calculation"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to HR -> Payroll -> TDS"
+        - "Add payroll & process"
+        - "Verify that after processing payroll in deduction column shows 'TDS' field"
+        - "Verify that 'TDS' deduct for 1 month"
+        - "After verification or completion of payroll"
+        - "Go to HR -> Payroll ->TDS"
+        - "Verify that after completion of no. payroll months remaining fields shows = (no. of payroll completed - months remaining)"
+        - "Ex. if months remaining field is 12 & after completion of 1 payroll months remaining fields should be 11"
+        - "Verify that 'TDS payable' & 'TDS amount paid' amount should be same"
+        - "Verify that 'TDS paid' field show addition of paid tds"
+    conditions:
+        - "Test fails if paid TDS amount shows wrong value"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "3 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

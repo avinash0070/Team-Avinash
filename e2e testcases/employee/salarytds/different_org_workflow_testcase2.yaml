@@ -1,0 +1,53 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary TDS"
+    owner: "Sneha Makade"
+    lastUpdate: "16 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Two different orgs salary tds declaration are not getting display in each others organizations"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to Employee -> Salary TDS -> Declaration"
+        - "Click on 'Add Declaration' button"
+        - "Add declaration with different categories by selecting category in select category dropdown"
+        - "Verify added declaration display at dashboard with view, edit and cancel icon"
+        - "Verify status of added declaration is 'pending declaration approval'"
+        - "Click on status dropdown, select 'pending declaration approval'"
+        - "Verify only 'pending declaration approval' status is present at dashboard"
+        - "'Add Declaration' with upload receipt, verify declaration present with status 'pending proof approval'"
+        - "Go to Ambersales -> Organization"
+        - "'Add Org', make it enable, add admin and admin email"
+        - "Verify 'welcome to aFinPRos' mail is sent to mailtrap"
+        - "Verify 'Action Required: Verify email' mail sent to mailtrap for admin email"
+        - "Click on mail, it will get open, click on link for resetting password"
+        - "reset password"
+        - "login with admins credentials"
+        - "Go to Employee -> Salary TDS -> Declaration"
+        - "'Add Declaration' with different categories"
+        - "Go to Finance -> Salary TDS -> Pending Declaration Approval"
+        - "Click on action icon, do approve, reject, and change request for different declarations"
+        - "Go to 'HR' -> Salary TDS -> Declaration"
+        - "Verify declaration present at dashboard with one of the status declaration approved, rejected, requested change, cancelled, pending declaration approval"
+        - "login with super admin user"
+        - "Verify admin organizations declaration are not present in super admins 'Amber SoftTech Systems Pvt. Ltd.' org"
+        - "Verify two different orgs declaration are not getting display in each others organizations"
+    conditions: 
+        - "Test fails if two different orgs salary tds declaration display in each others organizations"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "16 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 60 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

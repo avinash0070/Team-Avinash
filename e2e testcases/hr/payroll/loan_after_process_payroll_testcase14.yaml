@@ -1,0 +1,36 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payroll"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "3 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Loan default dashboard calculation"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to HR -> Payroll -> Loan"
+        - "Add payroll & process"
+        - "Verify that after processing payroll in deduction column shows 'Loan' field"
+        - "Verify that 'Loan' deduct for 1 month"
+        - "After verification or completion of payroll"
+        - "Verify that after completion of payroll salary advance field show in deduction column"
+        - "Go to HR -> Payroll -> Loan"
+        - "Verify that in balance field = loan amount - repayment if repayment is non zero value"
+        - "Verify that in balance field = 0 if repayment is equal to loan amount"
+    conditions:
+        - "Test fails if paid loan amount shows wrong value"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "3 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

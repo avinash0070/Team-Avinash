@@ -1,0 +1,82 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "11 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Payroll end to end testcase of salary -> frequency type"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Login with 'Super Admin' credentials"
+        - "Go to HR -> Employee"
+        - "Add employee"
+        - "Go to HR -> salary -> settings"
+        - "Verify that 'PF , PT & ESIC' are enable"
+        - "Verify that PT state is Maharashtra selected"
+        - "Verify that PF policy is '12% of basic for both employee and employer'"
+        - "Go to HR -> salary -> components"
+        - "Verify that 10 default component present with status enable"
+        - "Click on add component button open salary component pop-up "
+        - "Set Component name : medical allowance , Component type : Earnings ,Component status :Enable ,Frequency type :half yearly , Start month :January & click on add button component get added on dashboard"
+        - "Set Component name : querter allowance , Component type : Earnings ,Component status :Enable ,Frequency type : quarterly , Start month :January & click on add button component get added on dashboard"
+        - "Set Component name : yearly allowance , Component type : Earnings ,Component status :Enable ,Frequency type : yearly , Start month :January & click on add button component get added on dashboard"
+        - "Set Component name : none component , Component type : Earnings ,Component status :Enable ,Frequency type : none & click on add button component get added on dashboard"
+        - "Go to HR -> Salary -> structure"
+        - "Click on edit structure component & set automatic to yes then it open component structure pop-up"
+        - "Set 'Basic salary -> type : % ctc -> Value : 50'"
+        - "Set 'House Rent Allowance -> type : % ctc -> Value : 5'"
+        - "Set 'Conveyance Allowance -> type : % ctc -> Value : 5'"
+        - "Set 'LTA -> type : % ctc -> Value : 5'"
+        - "Set 'Medical allowance : %ctc -> value: 5'"
+        - "Set 'querter Allowance : %ctc -> value: 5'"
+        - "Set 'yearly allowance : %ctc -> value: 5'"
+        - "Set 'none component : %ctc -> value: 5'"
+        - "Set Special Allowance as a remaining & click on set structure button"
+        - "Verify on dashboard it shows automatic : yes & remaining component :special allowance"
+        - "Go to HR -> salary -> details"
+        - "Add salary details for added employee"
+        - "Verify that added employee's ctc valid date is patch"
+        - "Enter employee's current ctc : 400000 & click on calculate button"
+        - "Enter basic salary :200000"
+        - "Enter house rent allowance :20000"
+        - "Enter conveyance allowance:20000"
+        - "Enter LTA :20000"
+        - "Enter Medical allowance : 20000"
+        - "Enter querter Allowance : 20000"
+        - "Enter yearly allowance : 20000"
+        - "Enter none component : 20000"
+        - "Enter special allowance :36000"
+        - "Verify that Employer cont esic & Employees cont esic show 0 value"
+        - "Verify that Employer Cont PF & Employees Cont PF show 24000 value"
+        - "Verify that in PT shows 2500"
+        - "Verify that all values is for 1 year"
+        - "Verify that when ctc total & current ctc match then in benefits column esic & pf calculate automatically"
+        - "Verify that when ctc total & current ctc match then in deduction column pt , pf & esic calculate automatically"
+        - "Verify that current ctc match with ctc total"
+        - "Click on next button it open 'Confirm Salary' pop-up with previous & add button"
+        - "Verify that confirm salary pop-up contain all salary details entered in salary details pop-up"
+        - "Verify that after clicking on previous button it open salary details pop-up with all salary detail"
+        - "Click on add button salary details get added"
+        - "Go to HR -> Payroll -> Add payroll"
+        - "Verify that medical allowance component show in june & december months payroll"
+        - "Verify that querter Allowance component show in march , june , september & december months payroll"
+        - "Verify that yearly allowance component show in december months payroll"
+        - "Verify that none component component not show in any months payroll"
+    conditions:
+        - "Test fails if salary component not shown according to frequency type"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "11 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 20 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

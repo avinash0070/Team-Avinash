@@ -1,0 +1,38 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Payroll"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "5 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Leave deduction of employee during payroll"
+    browsers:
+        - "chrome"
+    steps:
+        - "Verify that leave balance for particular employee is in negative"
+        - "Go to HR -> Payroll"
+        - "Add payroll -> start payroll"
+        - "Go to HR -> LMS"
+        - "Verify that deduct leave icon show after starting payroll"
+        - "Click on deduct leave icon it open with deduct leave pop up"
+        - "Verify that pop up contain id , name , payroll & name fields"
+        - "Verify that deduct leave pop up contain leave type , balance , old deduct days , new deduct days field"
+        - "Enter no. days in new deduct days field"
+        - "Go to Payroll -> process payroll"
+        - "Check all component calculate = No. days in a month - new deduct days"
+    conditions:
+        - "Test fails if after deduction balance not show correct"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "5 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 20 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

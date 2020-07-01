@@ -1,0 +1,30 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Task"
+    owner: "Jafar Pathan"
+    lastUpdate: "29 May, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Record field should show first 50 records of blocked task"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Go to HR -> Tasks -> Blocked"
+        - "Change value of records field to 50"
+        - "Verify that there is 50 blocked tasks present at dashboard"
+    conditions:
+        - "Test fails, if task list is not according to record field value"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: 29 May, 2020 #set the last when this test was run
+    runBy: Jafar pathan #name of the person running this testType
+    duration: 05 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

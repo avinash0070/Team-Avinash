@@ -1,0 +1,42 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Task"
+    owner: "Jafar Pathan"
+    lastUpdate: "8 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Task added by 'HR' can be blocked by 'HR'"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Login with 'HR' credentials"
+        - "Go to HR -> Tasks -> Pending"
+        - "Click on 'Add Task' button"
+        - "Fill all required fields and click 'Add' button"
+        - "Verify that task added by 'HR' is listed on pending task dashboard"
+        - "Click on action icon, select action item 'Block'"
+        - "'Block task' pop-up should open with two fields (Blocked On Whom, Reason)"
+        - "Entered employee1 name in 'Blocked On Whom' field and fill all required fields"
+        - "click 'Block' button"
+        - "Go to HR -> Tasks -> Blocked"
+        - "Verify that pending task moved to the blocked task dashboard"
+        - "Verify that all org members blocked tasks are listed in blocked task dashboard"
+        - "Login with Employee1 credentials"
+        - "Go to Employee -> Task -> Pending"
+        - "Verify that the task blocked by 'HR' is listed in Employee1's pending Task dashboard"
+    conditions:
+        - "Test fails if task blocked by 'HR' is not listed on blocked task dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: 8 June, 2020 #set the last when this test was run
+    runBy: Jafar pathan #name of the person running this testType
+    duration: 300 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

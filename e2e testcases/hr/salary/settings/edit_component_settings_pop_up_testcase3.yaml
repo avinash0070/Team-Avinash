@@ -1,0 +1,45 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "4 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Default salary -> settings page should show edit component settings pop-up"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to HR -> Salary"
+        - "Verify that on salary dashboard shows edit settings button"
+        - "Click on edit settings button which open edit component settings pop-up"
+        - "Verify that pop-up contain professional tax field with enable & disable status"
+        - "Verify that if status is enable then professional tax field show in each employee's salary"
+        - "Verify that if status is enable then 'Select state' field is also present & contain dropdown of states"
+        - "Verify that user have to select state"
+        - "Verify that if status is disable then professional tax field not show in each employee's salary"
+        - "Verify that pop-up contain provident fund field with enable & disable status"
+        - "Verify that if status is enable then provident fund field show in each employee's salary"
+        - "Verify that if status is enable then 'Select policy ' field is also present & contain dropdown of 3 policies"
+        - "Verify that 3 policies are i)'12% of basic for both employee and employer' ii)' Minimum of 1800 and 12% of basic for both employee and employer'
+           iii)'Minimum of 1800 and 12% of basic for employer, and 12% of basic for employee' present"
+        - "Verify that if status is disable then Provident Fund field not show in each employee's salary"
+        - "Verify that pop-up contain 'ESIC' field with enable & disable status"
+        - "Verify that if status is enable then esic field show in each employee's salary"
+        - "Verify that if status is disable then esic field not show in each employee's salary"
+        - "Verify that there is 'Submit' button click on submit button & check all fields are updated"
+    conditions:
+        - "Test fails if edit component settings pop-up not open"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "4 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

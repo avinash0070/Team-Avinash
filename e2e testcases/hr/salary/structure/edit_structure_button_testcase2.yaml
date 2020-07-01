@@ -1,0 +1,32 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary"
+    owner: "Pallavi Deshmukh"
+    lastUpdate: "4 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "default salary -> Structure page should show 'Edit Structure' button"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to HR -> Salary"
+        - "Verify that on salary dashboard shows edit Structure button"
+        - "Click on edit settings button which open component structure pop up"
+        - "Verify that automatic field show with yes & no option"
+        - "Verify that 'set structure' button in present on pop up"
+    conditions:
+        - "Test fails if edit Structure button is not clickable"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "4 June, 2020" #set the last when this test was run
+    runBy: Pallavi #name of the person running this testType
+    duration: 10 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
