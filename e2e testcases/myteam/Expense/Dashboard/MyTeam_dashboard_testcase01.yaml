@@ -1,0 +1,39 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Dashboard"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "02 june, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Added expense should display in my team expense dashboard"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+        - "IE"
+    steps:
+        - "Go to my team -> expense "
+        - "Verify that the default page is expense"
+        - "Verify that left menu expense dashboard is highlighted"
+        - "Check spelling on all text contents"
+        - "Verify all data is present"
+        - "Verify that there is view button"
+        - "Click on view button it should be open expense details pop-up"
+        - "Check spelling on all text contents"
+        - "Verify all data is present"
+    conditions:
+        - "Test fails if added expense should not display"
+        - "Test fails if view button not works"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: fail #valid status are notRun, pass, fail, sometimeFail
+    date: "02 june, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug: Email id is not shown properly.
+        details: After clicking on view button, expense details pop-up box is shown and in that email id
+                 is incomplete.after the @ symbol data is not present.
+        bugNum: 01 #if bug was reported and filed, report the bug number here
