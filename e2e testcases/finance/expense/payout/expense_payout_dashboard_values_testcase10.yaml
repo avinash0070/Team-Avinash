@@ -1,0 +1,38 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+     name: "Expense"
+    owner: "Vipul suryawanshi"
+    lastUpdate: "11 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Expense payout dashboard should display expenses in dashboard"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Expense -> Payout"
+        - "Check spelling on all text contents"
+        - "Verify that there are seven columns present at payout dashboard (Start date, Cutoff date, Payout date, Total amount, Employees, Expenses, Status)"
+        - "Verify that expense start date show selected start date"
+        - "Verify that expense cutoff date show selected cutoff date"
+        - "Verify that payout date is greater than cutoff date"
+        - "Verify that total amount display calculated amount automatically"
+        - "Verify that employees column display employee name"
+        - "Verify that expenses column display expense"
+        - "Verify that status column display proper status"
+        - "Verify that there is 'View' button"
+        - "Verify that there is 'Action' button"
+    conditions:
+        - "Test fails if expense payout dashboard not display payout expenses in dashboard page"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "11 June, 2020" #set the last when this test was run
+    runBy: Vipul suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
