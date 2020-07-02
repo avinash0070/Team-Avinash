@@ -1,0 +1,31 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: "Vipul suryawanshi"
+    lastUpdate: "07 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: " 'Expense date from' filter should display expenses in expense dashboard "
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Employee -> Expense -> Dashboard"
+        - "Click on 'Expense date from' filter and select date" 
+        - "Check spelling on all text contents"
+        - "Verify that there are five column present at expense dashboard (Expense Date, Process Date, Description, Total Amount, Status)"
+        - "Verify that 'Expense date from' filter display from selected date of expenses on dashboard"
+    conditions:
+        - "Test fails if 'Expense date from' filter not display expenses in expense dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "07 June, 2020" #set the last when this test was run
+    runBy: Vipul suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
