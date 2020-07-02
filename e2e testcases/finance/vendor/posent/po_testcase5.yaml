@@ -1,0 +1,41 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Vipul suryawanshi"
+    lastUpdate: "23 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "after clicking 'Next' button purchase order pop up should display"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Vendor -> PO Sent -> Add Purchase Order"
+        - "Verify that search vendor pop up is there"
+        - "Click on 'Next' button"
+        - "Verify that purchase order pop up should open"
+        - "Check spelling on all text contents"
+        - "Verify that there is company name and company logo"
+        - "Verify that default vendor details are display"
+        - "Verify that is po date and po due date display"
+        - "Verify that there are item list"
+        - "Verify that there is item list 'Add' button"
+        - "Verify that there is 'Upload PO' button"
+        - "Verify that there is 'Previous' button"
+        - "Verify that there is 'Next' button"
+        - "Verify that there is 'Cancel' button icon"
+        - "Verify that there company signature is there"
+    conditions:
+        - "Test fails if after clicking 'Next' button purchase order pop up does not display"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "23 June, 2020" #set the last when this test was run
+    runBy: Vipul suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

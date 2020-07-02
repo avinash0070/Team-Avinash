@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Vipul suryawanshi"
+    lastUpdate: "23 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Add 'Item list' button details should add item details"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to Finance -> Vendor -> PO Sent -> Add Purchase Order"
+        - "Verify that add purchase order pop up should open"
+        - "Verify that there is item list field (Item, Description, Quantity, Price)"
+        - "Verify that there is 'Upload PO' button"
+        - "Add purchse order receipt if it is otherwise skip that field"
+        - "Fill all required fields on item list pop up"
+        - "Verify that there is 'Add' item button"
+        - "Click on 'Add' item button"
+        - "Verify that information we have filled in should get save properly"
+        - "Verify that added item list display below with field (Item, Description, Quantity, Price, Amount)"
+        - "verify that amount is automatically calculated correctly"
+        - "Verify that total field is there and it is displaying amount"
+        - "Verify that there is 'Edit' button icon"
+        - "Verify that there is 'Delete' button icon"
+    conditions:
+        - "Test fails if add 'Item list' button details does not add item  details"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "23 June, 2020" #set the last when this test was run
+    runBy: Vipul suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details: 
+        bugNum: #if bug was reported and filed, report the bug number here
