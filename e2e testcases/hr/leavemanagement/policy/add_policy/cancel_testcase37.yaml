@@ -5,7 +5,7 @@ feature:
     lastUpdate: "06 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on cancel icon should open cancel policy popup form"
+    summary: "Click on 'Cancel' icon should open cancel policy popup form"
     browsers:
         - "Chromium"
     steps:
@@ -13,9 +13,9 @@ test:
         - "Click on 'Add Policy' button, it should open policy detail popup form"
         - "Fill all the mandatory fields, click on 'Add' button in policy detail popup form"
         - "Verify added policy should get display at dashboard"
-        - "Click on cancel icon, it should open cancel policy popup form"
+        - "Click on 'Cancel' icon, it should open cancel policy popup form"
     conditions:
-        - "Test fails if click on cancel icon do not open cancel policy popup form"
+        - "Test fails if click on 'Cancel' icon do not open cancel policy popup form"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

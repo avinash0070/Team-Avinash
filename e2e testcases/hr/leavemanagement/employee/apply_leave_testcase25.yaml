@@ -5,7 +5,7 @@ feature:
     lastUpdate: "09 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on apply leave icon should open apply leaves popup form"
+    summary: "Click on 'Apply leave' icon should open apply leaves popup form"
     browsers:
         - "Chromium"
     steps:
@@ -15,11 +15,11 @@ test:
         - "Verify employee bank details popup form should get open"
         - "Click on 'Add' button in employee bank details popup form, employee should get added at dashboard"
         - "Go to Leave Management -> Employee"
-        - "Click on apply leave icon, it should open apply leaves popup form"
+        - "Click on 'Apply leave' icon, it should open apply leaves popup form"
         - "Verify id, name, and leave balance fields are present"
         - "Verify start date, reason, number of days, and leave type dropdown should be present"
     conditions:
-        - "Test fails if click on apply leave icon do not open apply leaves popup form"
+        - "Test fails if click on 'Apply leave' icon do not open apply leaves popup form"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

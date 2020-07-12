@@ -5,7 +5,7 @@ feature:
     lastUpdate: "09 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on close icon should close apply leaves popup form"
+    summary: "Click on 'Close' icon should close apply leaves popup form"
     browsers:
         - "Chromium"
     steps:
@@ -15,10 +15,10 @@ test:
         - "Verify employee bank details popup form should get open"
         - "Click on 'Add' button in employee bank details popup form, employee should get added at dashboard"
         - "Go to Leave Management -> Employee"
-        - "Click on apply leave icon, it should open apply leaves popup form"
-        - "Click on close icon present at right top, apply leaves popup form should get closed"
+        - "Click on 'Apply leave' icon, it should open apply leaves popup form"
+        - "Click on 'Close' icon present at right top, apply leaves popup form should get closed"
     conditions:
-        - "Test fails if click on close icon do not close apply leaves popup form"
+        - "Test fails if click on 'Close' icon do not close apply leaves popup form"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

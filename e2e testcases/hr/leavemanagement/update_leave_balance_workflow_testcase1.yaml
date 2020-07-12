@@ -15,11 +15,11 @@ test:
         - "Go to HR -> Leave Management -> Policy"
         - "Add policy"
         - "Go to HR -> Leave Management -> Employee"
-        - "Click on apply leave icon"
+        - "Click on 'Apply leave' icon"
         - "Fill all the mandatory fields"
         - "Click on 'Update' button"
         - "Verify alert message 'Please update leave balance of festive policy for rani' should display at dashboard"
-        - "Click on close icon, alert message should get closed"
+        - "Click on 'Close' icon, alert message should get closed"
     conditions:
         - "Test fails if update leave balance workflow does not work proper"
     automation:

@@ -5,7 +5,7 @@ feature:
     lastUpdate: "08 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on edit icon should open edit leaves popup form"
+    summary: "Click on 'Edit' icon should open edit leaves popup form"
     browsers:
         - "Chromium"
     steps:
@@ -15,12 +15,12 @@ test:
         - "Verify employee bank details popup form should get open"
         - "Click on 'Add' button in employee bank details popup form, employee should get added at dashboard"
         - "Go to Leave Management -> Employee"
-        - "Click on edit icon, edit leaves popup form should get open"
+        - "Click on 'Edit' icon, edit leaves popup form should get open"
         - "Verify id, name and joining date fields are present at top"
         - "Verify table is present in form with headings leave type and leave balance"
         - "Verify total field is present at below and 'Update' button too"
     conditions:
-        - "Test fails if click on edit icon do not open edit leaves popup form"
+        - "Test fails if click on 'Edit' icon do not open edit leaves popup form"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

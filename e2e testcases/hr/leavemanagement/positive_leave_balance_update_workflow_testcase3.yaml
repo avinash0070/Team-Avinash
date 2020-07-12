@@ -15,7 +15,7 @@ test:
         - "Go to HR -> Leave Management -> Policy"
         - "Add policy"
         - "Go to HR -> Leave Management -> Employee"
-        - "Click on edit icon, add positive numbers in 'leave balance' column"
+        - "Click on 'Edit' icon, add positive numbers in 'leave balance' column"
         - "Update 'paid leave' balance as 10"
         - "Update 'festive' balance as 20"
         - "Verify total field display 'total: 30'"

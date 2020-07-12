@@ -16,7 +16,7 @@ test:
         - "Add policy"
         - "Go to HR -> Leave Management -> Employee"
         - "Update leave balance"
-        - "Click on apply leave icon"
+        - "Click on 'Apply leave' icon"
         - "Fill all the mandatory fields"
         - "Click on 'Update' button"
         - "Verify mail should go to mailtrap as 'leave added for employee'"

@@ -1,0 +1,34 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "23 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Leave updated by 'HR' person should display status 'Updated' at Employee -> Leave Management -> My Leaves dashboard"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Go to HR -> Leave Management -> Employee"
+        - "Click on 'Edit' icon, edit leaves popup form should get open"
+        - "Update leave balance and click on 'update' button"
+        - "Verify total leave balance should change and color of employee should change to white"
+        - "Go to Employee -> Leave Management -> My Leaves"
+        - "Verify updated policy should get display at dashboard with status 'Updated' with only 'View' icon"
+    conditions:
+        - "Test fails if leave updated by 'HR' person do not display status as 'Updated' at Employee -> Leave Management -> My Leaves dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "23 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 12 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

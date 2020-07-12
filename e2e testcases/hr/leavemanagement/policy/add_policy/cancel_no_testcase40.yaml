@@ -13,7 +13,7 @@ test:
         - "Click on 'Add Policy' button, it should open policy detail popup form"
         - "Fill all the mandatory fields, click on 'Add' button in policy detail popup form"
         - "Verify added policy should get display at dashboard"
-        - "Click on cancel icon, it should open cancel policy popup form"
+        - "Click on 'Cancel' icon, it should open cancel policy popup form"
         - "Verify cancel policy popup form should display 'Are you sure you want to cancel the festive policy."
         - "Verify cancel policy popup form should include 'Yes' and 'No' button"
         - "Click on 'No' button, it should close cancel policy popup form"

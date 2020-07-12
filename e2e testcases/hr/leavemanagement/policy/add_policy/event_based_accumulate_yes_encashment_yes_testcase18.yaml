@@ -18,7 +18,7 @@ test:
         - "Verify if accumulate field is yes then accumulate upto field should display"
         - "Click on 'Add' button in policy detail popup form"
         - "Verify policy with event based leave cycle 'accumulate yes' and 'encashment yes' is display at dashboard"
-        - "Verify policy added is present at dashboard with view, edit and cancel icon"
+        - "Verify policy added is present at dashboard with 'View', 'Edit' and 'Cancel' icon"
     conditions:
         - "Test fails if selected event based leave cycle policy do not display at dashboard with 'accumulate yes' and 'encashment yes'"
     automation:

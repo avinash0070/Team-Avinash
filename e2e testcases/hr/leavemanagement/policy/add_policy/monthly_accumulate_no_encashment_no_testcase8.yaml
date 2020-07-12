@@ -18,7 +18,7 @@ test:
         - "Verify if accumulate field is no then accumulate upto field should not display"
         - "Click on 'Add' button in policy detail popup form"
         - "Verify policy with monthly leave cycle 'accumulate no' and 'encashment no' is display at dashboard"
-        - "Verify policy added is present at dashboard with view, edit and cancel icon"
+        - "Verify policy added is present at dashboard with 'View', 'Edit' and 'Cancel' icon"
     conditions:
         - "Test fails if selected monthly leave cycle policy do not display at dashboard with 'accumulate no' and 'encashment no'"
     automation:

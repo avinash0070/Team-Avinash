@@ -16,7 +16,7 @@ test:
         - "Click on 'Tuition Fees' in category dropdown"
         - "Verify there should be tuition fees type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Tuition Fees' do not displayes tuition fees type of declarations at dashboard"
+        - "Test fails if category 'Tuition Fees' do not displays tuition fees type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

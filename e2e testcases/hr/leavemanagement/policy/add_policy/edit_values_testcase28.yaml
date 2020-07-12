@@ -13,7 +13,7 @@ test:
         - "Click on 'Add Policy' button, it should open policy detail popup form"
         - "Fill all the mandatory fields, click on 'Add' button in policy detail popup form"
         - "Verify added policy should get display at dashboard"
-        - "Click on edit icon, it should open policy details popup form"
+        - "Click on 'Edit' icon, it should open policy details popup form"
         - "Verify policy details popup form should display already filled values"
         - "Change some of fields or all fields"
         - "Click on 'Save' button in policy details popup form"

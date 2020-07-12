@@ -16,7 +16,7 @@ test:
         - "Click on 'Person With Disability' in category dropdown"
         - "Verify there should be person with disability type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Person With Disability' do not displayes person with disability type of declarations at dashboard"
+        - "Test fails if category 'Person With Disability' do not displays person with disability type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

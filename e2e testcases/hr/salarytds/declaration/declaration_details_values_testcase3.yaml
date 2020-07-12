@@ -1,0 +1,42 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary TDS"
+    owner: "Sneha Makade"
+    lastUpdate: "26 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Declaration details values should get display at dashboard after adding declaration"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Go to Employee -> Salary TDS -> Declaration"
+        - "Click on 'Add Declaration' button, add declaration details popup form should get open"
+        - "Fill all the mandatory fields"
+        - "Click on 'Add' button"
+        - "Verify added declaration should get display at dashboard with status 'pending declaration approval'"
+        - "Go to HR -> Salary TDS -> Declaration"
+        - "Verify added declaration from Employee -> Salary TDS tab should get display at declaration dashboard"
+        - "Verify id of employee should get display below id field"
+        - "Verify employee name should get display below name input field"
+        - "Verify present financial year should get display below financial year field"
+        - "Verify date of declaration should get display below submitted on field"
+        - "Verify category of added declaration should get display below category field"
+        - "Verify amount of declaration should get display below amount field"
+        - "Verify status of declaration should get display below status field"
+    conditions:
+        - "Test fails if declaration details values do not get display at dashboard after adding declaration"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "26 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 18 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

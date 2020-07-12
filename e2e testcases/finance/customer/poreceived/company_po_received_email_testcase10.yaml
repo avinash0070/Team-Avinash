@@ -1,0 +1,57 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Avinash"
+    lastUpdate: "18 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Purchase order customer 'Email' verification"
+    browsers:
+        - "chrome"
+    steps:
+        - "Login as superadmin credentials"
+        - "Go to finance -> customer -> 'PO' received"
+        - "Click on 'Add Purchase Order' button"
+        - "Verify that 'Search Customer' pop-up should be open"
+        - "Search added customer and click on search button the search result should be display"
+        - "Select the customer in the search result and click on 'Next' button"
+        - "Verify that the 'Purchase Order' (You can add, edit or delete multiple items here) should be open"
+        - "Fill all the mandatory fields with proper information"
+        - "Click on 'Add' button"
+        - "Verify Added item details gets display at item list with 'Edit' and 'Delete' icons"
+        - "Click on 'Upload PO' Select the file and 'Upload' the Selected file"
+        - "Click on 'Next' button"
+        - "Verify that 'Purchase Order(You can confirm PO details here)' pop-up should be open"
+        - "Click on 'Create Purchase Order' button"
+        - "Verify 'Added Purchase Order' details gets display at dashboard with 'View', 'Edit' and 'Cancel' icons"
+        - "Verify that in mail 'Amber SoftTech Systems Pvt. Ltd. Received New Purchase Order'"
+        - "Verify 'From:mailer@afinpros.com' this should present in mails header"
+        - "Verify 'To: customer1@gmail.com' this should present in mails header "
+        - "Verify mails body should contain
+           Hi,
+           We have received a new purchase order from you, ie, customer_1. Here are the purchase order details:
+           PO Number: PO/2020-2021/0001
+           PO Date: 18/6/2020
+           PO Amount: 10000.00
+           Vendor Name: 'Amber SoftTech Systems Pvt. Ltd.'
+           Please find the attached PO file.
+           Regards,
+           'Anurag Agarwal'
+           Phone: 12345678
+           Powered By aFinPROs.com"
+    conditions:
+        - "Test fails if customer is not show in 'Purchase order received'"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 June, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 1 minutes #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here  

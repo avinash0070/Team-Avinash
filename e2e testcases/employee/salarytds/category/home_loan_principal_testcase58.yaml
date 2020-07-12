@@ -16,7 +16,7 @@ test:
         - "Click on 'Home Loan Principal' in category dropdown"
         - "Verify there should be home loan principal type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Home Loan Principal' do not displayes home loan principal type of declarations at dashboard"
+        - "Test fails if category 'Home Loan Principal' do not displays home loan principal type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

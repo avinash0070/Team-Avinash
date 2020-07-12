@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary TDS"
+    owner: "Sneha Makade"
+    lastUpdate: "25 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Click on 'Approve' in action dropdown should approve declaration"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Go to Employee -> Salary TDS -> Declaration"
+        - "Click on 'Add Declaration' button, add declaration popup form should get open"
+        - "Fill all the mandatory fields and click on 'Add' button"
+        - "Add declarations of different categories"
+        - "Verify added declaration should get display at dashboard with status 'pending declaration approval'"
+        - "Go to Finance -> Salary TDS -> Pending Declaration Approval"
+        - "Verify added declaration should get display at dashboard with 'View' and 'Action' icon"
+        - "Click on 'Action' icon, it should open dropdown which contains 'approve', 'reject' and 'Change request'"
+        - "Click on 'Approve', approve declaration popup form should get open"
+        - "Verify 'Are you sure you want to approve the declaration for Interest On Saving Account of amount 2000?' present in popup form"
+        - "Add comment in comment input field and click on 'Approve' button"
+        - "Verify declaration should get removed from pending declaration approval dashboard"
+    conditions:
+        - "Test fails if click on 'Approve' in action dropdown do not approve declaration"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail 
+    date: "25 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

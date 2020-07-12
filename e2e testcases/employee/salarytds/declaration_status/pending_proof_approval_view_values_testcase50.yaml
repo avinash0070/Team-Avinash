@@ -19,11 +19,11 @@ test:
         - "Click on 'Add' button in add declaration popup form"
         - "Verify status of added declaration should display as pending proof approval with view, download, edit and cancel icon"
         - "Click on view icon, declaration details popup form should get open"
-        - "Verify added declaration date should display infront of submitted on field"
-        - "Verify running year should display infront of financial year field"
-        - "Verify description added for declaration should display infront of description field"
-        - "Verify added declaration category should display infront of category field"
-        - "Verify amount added for declaration should display infront of amount field"
+        - "Verify added declaration date should display in front of submitted on field"
+        - "Verify running year should display in front of financial year field"
+        - "Verify description added for declaration should display in front of description field"
+        - "Verify added declaration category should display in front of category field"
+        - "Verify amount added for declaration should display in front of amount field"
         conditions:
         - "Test fails if declaration details popup form do not display all filled information"
     automation:

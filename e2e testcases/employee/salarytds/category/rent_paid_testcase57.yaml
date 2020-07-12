@@ -16,7 +16,7 @@ test:
         - "Click on 'Rent Paid' in category dropdown"
         - "Verify there should be rent paid type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Rent Paid' do not displayes rent paid type of declarations at dashboard"
+        - "Test fails if category 'Rent Paid' do not displays rent paid type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

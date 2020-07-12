@@ -5,18 +5,18 @@ feature:
     lastUpdate: "02 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Clicked pagination previous button should display previous pages declarations list"
+    summary: "Clicked pagination 'Previous' button should display previous pages declarations list"
     browsers:
         - "Chromium"
     steps:
         - "Go to EMPLOYEE -> Salary TDS -> Declaration"
         - "Check spelling on all text contents"
-        - "Click on paginations next button"
-        - "Verify that next pages declarations list displayes at dashboard"
-        - "click on paginations previous button"
+        - "Click on paginations 'Next' button"
+        - "Verify that next pages declarations list displays at dashboard"
+        - "click on paginations 'Previous' button"
         - "Verify declarations list moved to previous page and shows previous pages declarations list"
     conditions:
-        - "Test fails if paginations previous button do not display previous pages declarations list"
+        - "Test fails if paginations 'Previous' button do not display previous pages declarations list"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

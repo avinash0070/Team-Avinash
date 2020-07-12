@@ -5,16 +5,16 @@ feature:
     lastUpdate: "04 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on pagination next button should display next pages organizations"
+    summary: "Click on pagination 'Next' button should display next pages organizations"
     browsers:
         - "Chromium"
     steps:
         - "Go to AMBERSALES -> Organization"
         - "Check spelling on all text contents"
-        - "Click on paginations next button"
+        - "Click on paginations 'Next' button"
         - "Verify that next pages organizations list display at dashboard"
     conditions:
-        - "Test fails if paginations next button do not display next pages organizations"
+        - "Test fails if paginations 'Next' button do not display next pages organizations"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

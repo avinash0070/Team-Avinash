@@ -16,7 +16,7 @@ test:
         - "Verify by default category type 'All' is selected"
         - "Verify there should be all types of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'All' do not displayes all types of declarations at dashboard"
+        - "Test fails if category 'All' do not displays all types of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

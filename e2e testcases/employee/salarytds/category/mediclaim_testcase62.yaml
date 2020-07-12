@@ -16,7 +16,7 @@ test:
         - "Click on 'Mediclaim' in category dropdown"
         - "Verify there should be mediclaim type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Mediclaim' do not displayes mediclaim type of declarations at dashboard"
+        - "Test fails if category 'Mediclaim' do not displays mediclaim type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

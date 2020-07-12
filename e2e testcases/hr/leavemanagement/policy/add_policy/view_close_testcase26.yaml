@@ -5,7 +5,7 @@ feature:
     lastUpdate: "05 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on close icon should close leave policy details popup form"
+    summary: "Click on 'Close' icon should close leave policy details popup form"
     browsers:
         - "Chromium"
     steps:
@@ -13,10 +13,10 @@ test:
         - "Click on 'Add Policy' button, it should open policy detail popup form"
         - "Fill all the mandatory fields, click on 'Add' button in policy detail popup form"
         - "Verify added policy should get display at dashboard"
-        - "Click on view icon, it should open leave policy details popup form"
-        - "Click on close icon present at top, it should close leave policy details popup form"
+        - "Click on 'View' icon, it should open leave policy details popup form"
+        - "Click on 'Close' icon present at top, it should close leave policy details popup form"
     conditions:
-        - "Test fails if click on close icon do not close leave policy details popup form"
+        - "Test fails if click on 'Close' icon do not close leave policy details popup form"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

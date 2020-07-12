@@ -16,7 +16,7 @@ test:
         - "Click on 'Donation' in category dropdown"
         - "Verify there should be donation type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Donation' do not displayes donation type of declarations at dashboard"
+        - "Test fails if category 'Donation' do not displays donation type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

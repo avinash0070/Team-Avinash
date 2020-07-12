@@ -19,7 +19,7 @@ test:
         - "Click on 'Add' button in add declaration popup form"
         - "Verify status of added declaration should display as pending proof approval with view, download, edit and cancel icon"
         conditions:
-        - "Test fails if added declarations status do not displayes as pending proof approval"
+        - "Test fails if added declarations status do not displays as pending proof approval"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

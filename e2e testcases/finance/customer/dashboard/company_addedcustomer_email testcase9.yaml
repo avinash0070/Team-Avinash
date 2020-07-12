@@ -1,0 +1,64 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Avinash"
+    lastUpdate: "18 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Add 'Company' customer 'Email' verification"
+    browsers:
+        - "chrome"
+    steps:
+        - "Login as superadmin credentials"
+        - "Go to Finance -> Customer -> Dashboard"
+        - "Verify that 'Select' (Select type of customer) pop-up should be open"
+        - "Select company and click on 'Next'"
+        - "Verify that 'Search Customer' (Select customer from search list or add new) pop-up should be open"
+        - "Verify that there is one Search button"
+        - "Fill the input field(the customer is not present in the customer list) and click on 'Search' button the 'Add New customer' button is visible"
+        - "Click on 'Add New Customer' button, the search pop-up should be go to the 'Add Customer details' pop-up"
+        -  Fill all the mandatory fields with proper information"
+        - "Click on 'Next' in 'Add Customer details' pop-up form"
+        - "Verify that 'Add Company Registration Details' pop-up should be open"
+        - "Fill all the mandatory fields with proper information"
+        - "Click on 'Next' in 'Add Company Registration Details' pop-up form"
+        - "Verify that 'Add Late Charge Details' pop-up should be open"
+        - "Fill all the mandatory fields with proper information"
+        - "Click on 'Add' in 'Add Late Charge Details' pop-up form"
+        - "Verify Added customer details gets display at dashboard with company logo"
+        - "Verify that in mail 'Amber SoftTech Systems Pvt. Ltd.' added 'Customer_1' as a customer"
+        - "Verify ' From:mailer@afinpros.com' this should present in mails header"
+        - "Verify 'To: customer1@gmail.com' this should present in mails header"
+        - "Verify mails body should contain
+           Dear customer_1,
+           Amber SoftTech Systems Pvt. Ltd. has added you, 'Customer_1' as their Customer.
+           Contact details for your company are:
+           Contact name: customer_1
+           Email: customer1@gmail.com
+           Phone:
+           Please validate your details and contact me in case of any questions.
+           Contact details for Amber SoftTech Systems Pvt. Ltd.:
+           Contact name:'Anurag Agarwal'
+           Email: anurag@ambersoft.in
+           Phone: 123456789
+           We at Amber SoftTech Systems Pvt. Ltd. use aFinPROs for our HR and Finance processes. We request you to come aboard aFinPROs. Someone from aFinPROs support team will contact you to help in getting on board.
+           Regards,
+           'Anurag Agarwal'
+           Phone: 123456789
+           Powered By aFinPROs.com"
+    conditions:
+        - "Test fails, if email is not added for the particular customer"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "18 June, 2020" #set the last when this test was run
+    runBy: Avinash #name of the person running this testType
+    duration: 30 sec #time taken in minutes to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here  

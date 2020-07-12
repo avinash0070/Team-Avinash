@@ -1,0 +1,35 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Salary TDS"
+    owner: "Sneha Makade"
+    lastUpdate: "25 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Selected others in category dropdown should display 'others' declarations at dashboard"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Go to Employee -> Salary TDS -> Declaration"
+        - "Add declaration of category others"
+        - "Go to Finance -> Salary TDS -> Pending Declaration Approval"
+        - "Verify added declaration from employee tab is present at pending declaration approval dashboard"
+        - "Click on category dropdown, it should get open"
+        - "Select 'others'"
+        - "Verify only 'others' declarations should get display at dashboard"
+    conditions:
+        - "Test fails if selected others in category dropdown do not display 'others' declarations at dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "25 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

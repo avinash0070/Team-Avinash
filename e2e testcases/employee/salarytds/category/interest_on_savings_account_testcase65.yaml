@@ -16,7 +16,7 @@ test:
         - "Click on 'Interest On Savings Account' in category dropdown"
         - "Verify there should be interest on savings account type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Interest On Savings Account' do not displayes interest on savings account type of declarations at dashboard"
+        - "Test fails if category 'Interest On Savings Account' do not displays interest on savings account type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

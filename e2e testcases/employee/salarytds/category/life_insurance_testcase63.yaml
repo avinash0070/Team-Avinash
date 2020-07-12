@@ -16,7 +16,7 @@ test:
         - "Click on 'Life Insurance' in category dropdown"
         - "Verify there should be life insurance type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Life Insurance' do not displayes life insurance type of declarations at dashboard"
+        - "Test fails if category 'Life Insurance' do not displays life insurance type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

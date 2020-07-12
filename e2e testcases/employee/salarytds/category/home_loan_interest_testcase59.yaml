@@ -16,7 +16,7 @@ test:
         - "Click on 'Home Loan Interest' in category dropdown"
         - "Verify there should be home loan interest type of declarations present at dashboard"
     conditions:
-        - "Test fails if category 'Home Loan Interest' do not displayes home loan interest type of declarations at dashboard"
+        - "Test fails if category 'Home Loan Interest' do not displays home loan interest type of declarations at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

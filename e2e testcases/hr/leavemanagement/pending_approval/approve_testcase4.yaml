@@ -18,7 +18,7 @@ test:
         - "Verify leave gets display at dashboard with status pending"
         - "Go to HR -> Leave Management -> Pending Approval"
         - "Verify pending approval for applied leave present at dashboard with approve/reject icon"
-        - "Click on approve/reject icon, popup form should get open"
+        - "Click on 'Approve/reject' icon, popup form should get open"
         - "Verify employee name should display at top"
         - "Verify Are you sure you want to approve the leave for 1 day of Jun 24, 2020 ? this type of messages should get display"
         - "Verify 'Approve', 'Reject' buttons are present below in popup form"

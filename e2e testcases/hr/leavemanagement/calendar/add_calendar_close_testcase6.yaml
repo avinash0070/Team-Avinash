@@ -5,16 +5,16 @@ feature:
     lastUpdate: "09 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on close icon should close leave calendar details popup form"
+    summary: "Click on 'Close' icon should close leave calendar details popup form"
     browsers:
         - "Chromium"
     steps:
         - "Login with super admin user"
         - "Go to HR -> Leave Management -> Calendar"
         - "Click on 'Add Calendar' button, leave calendar details popup form should get open"
-        - "Click on close icon present at right top, leave calendar details popup form should get close"
+        - "Click on 'Close' icon present at right top, leave calendar details popup form should get close"
     conditions:
-        - "Test fails if click on close icon do not close leave calendar details popup form"
+        - "Test fails if click on 'Close' icon do not close leave calendar details popup form"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

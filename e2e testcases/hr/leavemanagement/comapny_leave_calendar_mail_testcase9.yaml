@@ -18,7 +18,7 @@ test:
         - "Add policy"
         - "Go to HR -> Leave Management -> Employee"
         - "Update leave balance of each employee"
-        - "Click on apply leave icon"
+        - "Click on 'Apply leave' icon"
         - "Fill all the mandatory fields"
         - "Apply leave for present day or leave including present day"
         - "Login with employee credentials"

@@ -5,19 +5,19 @@ feature:
     lastUpdate: "10 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on pagination previous button should display previous pages calendar list"
+    summary: "Click on pagination 'Previous' button should display previous pages calendar list"
     browsers:
         - "Chromium"
     steps:
         - "Login with super admin user"
         - "Go to HR -> Leave Management -> Calendar"
         - "Check spelling on all text content"
-        - "Click on paginations next button"
+        - "Click on paginations 'Next' button"
         - "Verify that next pages calendar list displays at dashboard"
-        - "click on paginations previous button"
+        - "click on paginations 'Previous' button"
         - "Verify calendar list moved to previous page and shows previous pages calendar list"
     conditions:
-        - "Test fails if paginations previous button do not display previous page calendar list"
+        - "Test fails if paginations 'Previous' button do not display previous page calendar list"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

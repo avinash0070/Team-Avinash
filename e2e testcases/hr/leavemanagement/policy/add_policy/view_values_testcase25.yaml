@@ -19,7 +19,7 @@ test:
         - "Verify maximum leaves should get display in front of max leaves"
         - "Verify accumulate is yes or no and display in front of accumulate field"
         - "Verify encashment is yes or no and display in front of encashment field"
-        - "Verify if accumulate is yes then accumulate upto field is present"
+        - "Verify if accumulate is yes then accumulate up to field is present"
     conditions:
         - "Test fails if leave policy details popup do not display all values with correct alignment"
     automation:

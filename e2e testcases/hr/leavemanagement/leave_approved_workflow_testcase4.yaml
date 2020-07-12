@@ -16,10 +16,10 @@ test:
         - "Add policy"
         - "Go to HR -> Leave Management -> Employee"
         - "Update leave balance"
-        - "Click on apply leave icon"
+        - "Click on 'Apply leave' icon"
         - "Fill all the mandatory fields"
         - "Click on 'Update' button"
-        - "Click on history icon"
+        - "Click on 'History' icon"
         - "Verify applied leave status is 'approved'"
         - "Verify leaves should get deduct from total balance of leaves"
     conditions:

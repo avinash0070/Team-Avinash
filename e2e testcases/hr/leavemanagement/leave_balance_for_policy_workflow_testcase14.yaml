@@ -25,7 +25,7 @@ test:
         - "Verify employees policy of type yearly should get updated at '1st of jan' after running script"
         - "Verify employees policy of type quarterly should get updated at '1st of jan', '1st of april', '1st of july' and '1st of oct' after running script"
         - "Verify total balance changed to 5.5 if script run at 1st of jan and if its monday"
-        - "Click on history icon, verify description for each policy is 'policy leave balance added' and status should be 'updated'" 
+        - "Click on 'History' icon, verify description for each policy is 'policy leave balance added' and status should be 'updated'" 
     conditions:
         - "Test fails if leave balance for policy workflow do not work proper"
     automation: 

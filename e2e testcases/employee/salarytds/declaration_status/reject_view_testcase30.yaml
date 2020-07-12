@@ -15,7 +15,7 @@ test:
         - "Click on 'Add Declaration' button, add declaration popup form should get open"
         - "Fill all the mandatory fields, click on 'Add' button, declaration should get display at dashboard"
         - "Verify status of added declaration should display as pending declaration approval"
-        - "Go to 'Finance' tab, click on salary tds, it should show three submenus like declaration, pending declaration approval, pending proof approval"
+        - "Go to 'Finance' tab, click on salary tds, it should show three sub menus like declaration, pending declaration approval, pending proof approval"
         - "Click on pending declaration approval, it should show added declaration from employee -> salary tds tab, with view and action icon"
         - "Click on action icon, it should show approve, reject, change request"
         - "Click on reject, reject declaration popup form should get open, add comment in comment input field"

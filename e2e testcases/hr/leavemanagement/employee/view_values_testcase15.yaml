@@ -15,7 +15,7 @@ test:
         - "Verify employee bank details popup form should get open"
         - "Click on 'Add' button in employee bank details popup form, employee should get added at dashboard"
         - "Go to Leave Management -> Employee"
-        - "Click on view icon, leaves balance popup form should get open"
+        - "Click on 'View' icon, leaves balance popup form should get open"
         - "Verify id, name are displaying in form"
         - "Verify leave type and leave balance are displaying in popup form in table format"
         - "Verify total should get display in popup form"

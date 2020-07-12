@@ -1,0 +1,49 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Pending Offer"
+    owner: "Sneha Makade"
+    lastUpdate: "30 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "'Offer from Amber SoftTech Systems Pvt. Ltd.' mail should display employee details"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to HR -> Pending Offer"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Offer' button, offer for candidate popup form should get open"
+        - "Fill all the mandatory fields and email of employee, click on 'Add' button in popup form, pending offer should get display at dashboard"
+        - "Go to 'mailtrap'"
+        - "Verify 'Offer from Amber SoftTech Systems Pvt. Ltd.' mail should send to mailtrap"
+        - "Click on 'Offer from Amber SoftTech Systems Pvt. Ltd.' mail should get open"
+        - "Verify 'From: Anurag Agarwal <mailer@afinpros.com>' this should present in mails header"
+        - "Verify 'To: jenny <jenny@gmail.com>' this should present in mails header"
+        - "Verify mails body should contains "Dear jenny, 
+          We are pleased to make you an offer at Amber SoftTech Systems Pvt. Ltd.. We think that your skills and experience will be a valuable asset to our company. If you choose to accept this offer, please follow the process given below. 
+          aFinPROs is a cloud platform which we use to manage our HR processes. Your account has been created on this platform with jenny@gmail.com as your login ID. You will receive an email to verify your email address and to reset your password. Please validate your details: 
+          Name: jenny
+          Email: jenny@gmail.com
+          Phone:
+          Offer Date: 1/10/2019 
+          Looking forward to welcoming you on our team. 
+          Regards,
+          Anurag Agarwal
+          Phone: 098765 
+          Powered By aFinPROs.com""
+    conditions:
+        - "Test fails if 'Offer from Amber SoftTech Systems Pvt. Ltd.' mail do not display employee details"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "30 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 20 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        

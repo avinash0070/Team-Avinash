@@ -1,0 +1,41 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Leave Management"
+    owner: "Sneha Makade"
+    lastUpdate: "24 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Employee personal login workflow for team calendar should work proper"
+    browsers:
+        - "Chromium"
+    steps:
+        - "Login with super admin user"
+        - "Go to HR -> Employee -> Dashboard"
+        - "Add employee"
+        - "Assign manger to the employee"
+        - "Reset password"
+        - "Login by employee credentials" 
+        - "Go to Employee -> Leave Management -> My Leaves"
+        - "Apply leave"
+        - "Login with super admin user"
+        - "Go to Employee -> Leave Management -> Team Calendar"
+        - "Verify applied leave by employee who is under same manger is not present at team calendar dashboard"
+        - "Go to HR -> Leave Management -> Pending Approval"
+        - "Click on 'Approve/Reject' icon, approve leave of employee"
+        - "Verify applied leave by employee who is under same manger is present at team calendar dashboard"
+    conditions:
+        - "Test fails if employee personal login workflow for team calendar do not work proper"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "24 June, 2020" #set the last when this test was run
+    runBy: Sneha #name of the person running this testType
+    duration: 30 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

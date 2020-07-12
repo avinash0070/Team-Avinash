@@ -5,7 +5,7 @@ feature:
     lastUpdate: "06 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on edit icon should open policy details popup form"
+    summary: "Click on 'Edit' icon should open policy details popup form"
     browsers:
         - "Chromium"
     steps:
@@ -13,10 +13,10 @@ test:
         - "Click on 'Add Policy' button, it should open policy detail popup form"
         - "Fill all the mandatory fields, click on 'Add' button in policy detail popup form"
         - "Verify added policy should get display at dashboard"
-        - "Click on edit icon, it should open policy details popup form"
+        - "Click on 'Edit' icon, it should open policy details popup form"
         - "Verify policy details form should display already filled values"
     conditions:
-        - "Test fails if click on edit icon do not open policy details popup form"
+        - "Test fails if click on 'Edit' icon do not open policy details popup form"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

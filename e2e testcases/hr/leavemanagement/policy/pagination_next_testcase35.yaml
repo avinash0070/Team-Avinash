@@ -5,16 +5,16 @@ feature:
     lastUpdate: "06 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on pagination next button should display next pages policy list"
+    summary: "Click on pagination 'Next' button should display next pages policy list"
     browsers:
         - "Chromium"
     steps:
         - "Go to HR -> Leave Management -> Policy"
         - "Check spelling on all text content"
-        - "Click on paginations next button"
+        - "Click on paginations 'Next' button"
         - "Verify that next pages policy list displays at dashboard"
     conditions:
-        - "Test fails if paginations next button do not display next page policy list"
+        - "Test fails if paginations 'Next' button do not display next page policy list"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated
