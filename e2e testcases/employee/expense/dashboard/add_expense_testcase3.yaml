@@ -10,7 +10,7 @@ test:
         - "Firefox"
     steps:
         - "Go to Employee -> Expense -> Dashboard"
-        - "Verify that the default page is expense dashboard"
+        - "Verify that the default page is 'Dashboard'"
         - "Verify that left menu expense dashboard is highlighted"
         - "Check spelling on all text contents"
         - "Click on 'Add Expense' button, add expense pop-up should get open"
