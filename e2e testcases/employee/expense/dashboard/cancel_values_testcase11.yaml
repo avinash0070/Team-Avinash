@@ -5,7 +5,7 @@ feature:
     lastUpdate: "07 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Cancel employee popup should display total amount of expense and expense should remove from expense dashboard"
+    summary: "Cancel employee pop-up should display total amount of expense and expense should remove from expense dashboard"
     browsers:
         - "Firefox"
     steps:
@@ -13,18 +13,18 @@ test:
         - "Verify that the default page is expense dashboard"
         - "Verify that left menu expense dashboard is highlighted"
         - "Check spelling on all text contents"
-        - "Click on 'Add Expense' button, add expense popup should get open"
+        - "Click on 'Add Expense' button, add expense pop-up should get open"
         - "Fill all mandatory fields"
-        - "Click on 'Add' button in add expense popup"
+        - "Click on 'Add' button in add expense pop-up"
         - "Verify expense details should get display at dashboard"
-        - "Click on 'Cancel' icon,cancel expense details popup should get open"
+        - "Click on 'Cancel' icon,cancel expense details pop-up should get open"
         - "Verify total amount of selected expense"
         - "Click on 'Yes' button"
-        - "Verify cancel expensee popup should get close and status of that expensee should get change on expense dashboard"
+        - "Verify cancel expensee pop-up should get close and status of that expensee should get change on expense dashboard"
         - "If click on 'No' button"
-        - "Verify cancel expense details popup should get close"
+        - "Verify cancel expense details pop-up should get close"
     conditions:
-        - "Test fails if cancel employee popup does not display total amount of expense and expense do not remove from expense dashboard"
+        - "Test fails if cancel employee pop-up does not display total amount of expense and expense do not remove from expense dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

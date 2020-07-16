@@ -5,25 +5,25 @@ feature:
     lastUpdate: "07 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "'Add Expense' button should add expense at dashboard"
+    summary: "Expense for category 'Normal' should add expense at dashboard"
     browsers:
         - "Firefox"
     steps:
         - "Go to Employee -> Expense -> Dashboard"
         - "Check spelling on all text contents"
-        - "Click on 'Add Expense' button, add expense pop up should open"
+        - "Click on 'Add Expense' button, add expense pop-up should open"
         - "Select 'Normal' expense category"
-        - "Verify that there is 'Expense Date' input field is present at popup"
-        - "Verify that there is 'Description' input field is present at popup"
-        - "Verify that there is 'Gross Amount' input field is present at popup"
-        - "Verify that there is 'Select GST %' dropdown list field is present at popup(0%, 5%, 12%, 18%, 28%)"
-        - "Verify that there is 'Total Amount' field is present at popup"
-        - "Verfy that there is 'Upload Receipt' button is present at popup"
+        - "Verify that there is 'Expense Date' input field is present at pop-up"
+        - "Verify that there is 'Description' input field is present at pop-up"
+        - "Verify that there is 'Gross Amount' input field is present at pop-up"
+        - "Verify that there is 'Select GST %' dropdown list field is present at pop-up(0%, 5%, 12%, 18%, 28%)"
+        - "Verify that there is 'Total Amount' field is present at pop-up"
+        - "Verfy that there is 'Upload Receipt' button is present at pop-up"
         - "Fill all mandatory fields"
-        - "Click on 'Add' button in add expense popup"
+        - "Click on 'Add' button in add expense pop-up"
         - "Verify expense details should get display at dashboard"
     conditions:
-        - "Test fails if 'Add Expense' button does not add expense at dashboard"
+        - "Test fails if expense for category 'Normal' does not add expense at dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

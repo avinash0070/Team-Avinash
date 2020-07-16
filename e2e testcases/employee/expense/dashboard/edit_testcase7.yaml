@@ -5,7 +5,7 @@ feature:
     lastUpdate: "07 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Click on 'Edit' icon should open expense details popup"
+    summary: "Click on 'Edit' icon should open expense details pop-up"
     browsers:
         - "Firefox"
     steps:
@@ -13,13 +13,13 @@ test:
         - "Verify that the default page is expense dashboard"
         - "Verify that left menu expense dashboard is highlighted"
         - "Check spelling on all text contents"
-        - "Click on 'Add Expense' button, add expense popup should get open"
+        - "Click on 'Add Expense' button, add expense pop-up should get open"
         - "Fill all mandatory fields"
-        - "Click on 'Add' button in add expense popup"
+        - "Click on 'Add' button in add expense pop-up"
         - "Verify expense details should get display at dashboard"
-        - "Click on 'Edit' icon, expense details popup should get open"
+        - "Click on 'Edit' icon, expense details pop-up should get open"
     conditions:
-        - "Test fails if click on 'Edit' icon does not open expense details popup"
+        - "Test fails if click on 'Edit' icon does not open expense details pop-up"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

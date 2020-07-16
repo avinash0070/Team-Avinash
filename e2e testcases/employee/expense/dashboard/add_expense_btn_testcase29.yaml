@@ -11,12 +11,12 @@ test:
     steps:
         - "Go to Employee -> Expense -> Dashboard"
         - "Check spelling on all text contents"
-        - "Click on 'Add Expense' button, add expense pop up should open"
-        - "Verify that there is 'Select Expense Category' dropdown list field is present at popup(Per day, Per Kilometer, Normal)"
-        - "Verify that there is 'Expense Date' input field is present at popup"
-        - "Verify that there is 'Description' input field is present at popup"
-        - "Verify that there is 'Total Amount' field is present at popup"
-        - "Verfy that there is 'Upload Receipt' button is present at popup"
+        - "Click on 'Add Expense' button, add expense pop-up should open"
+        - "Verify that there is 'Select Expense Category' dropdown list field is present at pop-up(Per day, Per Kilometer, Normal)"
+        - "Verify that there is 'Expense Date' input field is present at pop-up"
+        - "Verify that there is 'Description' input field is present at pop-up"
+        - "Verify that there is 'Total Amount' field is present at pop-up"
+        - "Verfy that there is 'Upload Receipt' button is present at pop-up"
         - "Verify that there is 'Add' button"
         - "Verify that there is 'Close' button with icon"
     conditions:
