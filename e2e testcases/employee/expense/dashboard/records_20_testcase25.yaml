@@ -5,21 +5,16 @@ feature:
     lastUpdate: "07 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Expense dashboard should display expense details after adding expense"
+    summary: "Record field should display first 20 records of employee expense"
     browsers:
-        - "Firefox"
+        - "Chrome"
     steps:
         - "Go to Employee -> Expense -> Dashboard"
-        - "Verify that the default page is expense dashboard"
-        - "Verify that left menu expense dashboard is highlighted"
         - "Check spelling on all text contents"
-        - "Click on 'Add Expense' button, add expense popup should get open"
-        - "Fill all mandatory fields"
-        - "Click on 'Add' button in add expense popup"
-        - "Verify expense details should get display at dashboard"
-        - "Verify five columns present at dashboard(Expense Date, Process Date, Category, Total Amount, Status)"
+        - "Verify Default value of records field is set to 20"
+        - "Verify that the 20 employee record present at dashboard"
     conditions:
-        - "Test fails if expense dashboard does not display expense details after adding expense"
+        - "Test fails if record field not display first 20 records of employee expense"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

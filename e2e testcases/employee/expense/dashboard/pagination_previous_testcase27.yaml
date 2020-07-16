@@ -1,25 +1,20 @@
 testType: e2e #Valid types are unit, e2e, load or failure
 feature:
-    name: "Expense"
+   name: "Expense"
     owner: "Vipul suryawanshi"
     lastUpdate: "07 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Expense dashboard should display expense details after adding expense"
+    summary: "Pagination 'Previous' button should moved to previous page"
     browsers:
-        - "Firefox"
+        - "Chrome"
     steps:
         - "Go to Employee -> Expense -> Dashboard"
-        - "Verify that the default page is expense dashboard"
-        - "Verify that left menu expense dashboard is highlighted"
         - "Check spelling on all text contents"
-        - "Click on 'Add Expense' button, add expense popup should get open"
-        - "Fill all mandatory fields"
-        - "Click on 'Add' button in add expense popup"
-        - "Verify expense details should get display at dashboard"
-        - "Verify five columns present at dashboard(Expense Date, Process Date, Category, Total Amount, Status)"
+        - "Click on pagination 'Previous' button"
+        - "Verify that previous page expense list display at dashboard"
     conditions:
-        - "Test fails if expense dashboard does not display expense details after adding expense"
+        - "Test fails if pagination 'Previous' button not moved to previous page"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

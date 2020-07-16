@@ -5,9 +5,9 @@ feature:
     lastUpdate: "07 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "Expense dashboard should display expense details after adding expense"
+    summary: "Expense dashboard should 'Status' dropdown display expenses in expense dashboard "
     browsers:
-        - "Firefox"
+        - "Chrome"
     steps:
         - "Go to Employee -> Expense -> Dashboard"
         - "Verify that the default page is expense dashboard"
@@ -17,9 +17,10 @@ test:
         - "Fill all mandatory fields"
         - "Click on 'Add' button in add expense popup"
         - "Verify expense details should get display at dashboard"
-        - "Verify five columns present at dashboard(Expense Date, Process Date, Category, Total Amount, Status)"
+        - "Click on 'Status' dropdown and select 'Pending Finance' " 
+        - "Verify that expense 'Status' dropdown display 'Pending Finance' status of expenses on dashboard"
     conditions:
-        - "Test fails if expense dashboard does not display expense details after adding expense"
+        - "Test fails if 'Status' dropdown does not display expenses in expense dashboard page"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated
