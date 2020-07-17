@@ -12,7 +12,7 @@ test:
         - "Go to Employee -> Expense -> Dashboard"
         - "Check spelling on all text contents"
         - "Verify Default value of records field is set to 10"
-        - "Verify that the 10 employee record present at dashboard"
+        - "Verify that the 10 expense record present at dashboard"
     conditions:
         - "Test fails if record field not display first 10 records of employee expense"
     automation:
