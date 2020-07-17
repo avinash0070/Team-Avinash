@@ -1,0 +1,41 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+     name: "Expense"
+    owner: "Vipul Suryawanshi"
+    lastUpdate: "11 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Expense payout should display expenses in dashboard"
+    browsers:
+        - "Firefox"
+    steps:
+        - "Go to Finance -> Expense -> Payout"
+        - "Verify that the default page is expense payout"
+        - "Verify that left menu expense payout is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Cycle' button, expense payout pop-up should get open"
+        - "Fill all mandatory fields"
+        - "Click on 'Add' button in expense payout pop-up"
+        - "Verify expense payout details should get display at dashboard"
+        - "Verify expense start date should get display below 'Start Date'"
+        - "Verify expense cutoff date should get display below 'Cutoff Date'"
+        - "Verify expense payout date should get display below 'Payout Date'"
+        - "Verify expense amount should get display below 'Total Amount'"
+        - "Verify employee name should get display below 'Employees'"
+        - "Verify expense should get display below 'Expenses'"
+        - "Verify status should get display below 'Status'"
+    conditions:
+        - "Test fails if expense payout does not display payout expenses in dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "11 June, 2020" #set the last when this test was run
+    runBy: Vipul Suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
