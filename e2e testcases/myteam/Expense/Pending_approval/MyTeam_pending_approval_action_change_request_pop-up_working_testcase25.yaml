@@ -1,0 +1,41 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "07 june, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Click on action 'Change Request' should get open change request pop-up and work properly"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to MY TEAM -> Expense -> Pending Approval"
+        - "Verify that the default page is pending approval dashboard"
+        - "Verify that left menu pending approval is highlighted"
+        - "Check spelling on all text contents"
+        - "Verify expense details should get display at dashboard"
+        - "Verify that there is 'Action' icon present at dashboard"
+        - "Click on 'Action' icon, drop-down list should get open"
+        - "Select 'Change Request' value from drop-down list" 
+        - "Verify that 'Change Request' pop-up get open"
+        - "Verify that after 'Change Request' there is name present of selected expense in '[ ]'"
+        - "verify that there is message displayed in pop-up 'Are you sure you want to change_request the expense for 'EXPENSE DATE' of 'AMOUNT'"
+        - "Verify that 'EXPENSE DATE' and 'AMOUNT' present in displayed message"
+        - "Verify that there is text-box with place-holder 'Comment'"
+        - "Verify that there is 'Change Request' button"
+        - "Verify that there is 'Close' icon present at top right most corner"
+    conditions:
+        - "Test fails if click on action 'Reject' should not get open change request pop-up and not work properly"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "07 june, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

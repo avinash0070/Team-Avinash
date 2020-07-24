@@ -1,0 +1,35 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "07 june, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Click on action 'Approve' should get open approve expense pop-up"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to MY TEAM -> Expense -> Pending Approval"
+        - "Verify that the default page is pending approval dashboard"
+        - "Verify that left menu pending approval is highlighted"
+        - "Check spelling on all text contents"
+        - "Verify expense details should get display at dashboard"
+        - "Verify that there is 'Action' icon present at dashboard"
+        - "Click on 'Action' icon, drop-down list should get open"
+        - "Select 'Approve' value from drop-down list" 
+        - "Verify that 'Approve Expense' pop-up get open"
+    conditions:
+        - "Test fails if click on action 'Approve' should not get open approve expense pop-up"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "07 june, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
