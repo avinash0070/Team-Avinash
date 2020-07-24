@@ -1,0 +1,37 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "02 june, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Expense details pop-up should display all filled values"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to MY TEAM -> Expense -> Dashboard"
+        - "Verify that the default page is expense dashboard"
+        - "Verify that left menu expense dashboard is highlighted"
+        - "Check spelling on all text contents"
+        - "Verify expense details should get display at dashboard"
+        - "Click on 'View' icon, expense details pop-up should get open"
+        - "Verify id is present at center in expense details pop-up"
+        - "Verify name and email should get display in front of 'Name' and 'Email' field"
+        - "Verify process date and expense date of expense should get display in front of 'Process date' and 'Expense date' field"
+        - "Verify category and no of kilometers of expense should get display in front of 'Category' and 'No. of Kilometers' field"
+        - "Verify total amount and description of expense should get display in front of 'Total Amount' and 'Description' field"
+    conditions:
+        - "Test fails if expense details pop-up does not display all filled values"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "02 june, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
