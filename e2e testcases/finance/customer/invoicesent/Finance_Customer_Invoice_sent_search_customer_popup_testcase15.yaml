@@ -1,0 +1,44 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "27 july, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Search Customer(Select customer from search list or add new) pop-up get open and works properly"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to FINANCE -> Customer -> Invoice Sent"
+        - "Verify that the default page is invoice sent"
+        - "Verify that left menu 'Invoice Sent' is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Invoice' button"
+        - "Verify that search customer(Select customer from search list or add new) popup is open"
+        - "Verify that there is search filter with place holder 'Search Customer'"
+        - "Verify that there is 'Search' button"
+        - "Verify that there is search result filed is present"
+        - "Verify that default search result is 'Sorry, there is no result for your search. You can add that as a customer.'"
+        - "If search result is present, after click on particular result, it should show in search result filed"
+        - "Verify that search result is listed with 'NAME, URL, EMAIL, PHONE, PAN, ORG TYPE''"
+        - "Verify that there is radio button is present along with search result"
+        - "Click on radio button"
+        - "Verify that there is 'Next' button"
+        - "If search result is not present, verify there is 'Add new customer' button"
+        - "Verify that in search result box this message is present 'Sorry, there is no result for your search. You can add that as a customer.'"
+        - "Verify that there is 'close' icon present"
+    conditions:
+        - "Test fails, if Search Customer popup not get open and not works properly"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "27 july, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug: 
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

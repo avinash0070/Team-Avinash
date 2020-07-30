@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "22 july, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Invoice (You can add, edit or delete multiple items here.) pop-up 'GST Type' radio button get add to item list"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to FINANCE -> Customer -> Invoice Sent"
+        - "Verify that the default page is Invoice Sent"
+        - "Verify that left menu 'Invoice Sent' is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Invoice' button"
+        - "Verify that search customer popup is opened"
+        - "Fill mandatory details"
+        - "Click on 'Next' button"
+        - "Verify that there is Invoice (You can add, edit or delete multiple items here.) pop-up is open"
+        - "Verify that there is 'Invoice Date' field present"
+        - "Verify that there is 'Invoice Due Date' field present"
+        - "Verify that there is 'GST Type' radio button present with 'Intra state, Inter State'"
+        - "Click on 'Intra State' radio button, it should add only 'CGST' and 'SGST' to in item list"
+        - "Click on 'Inter State' radio button, it should add only 'IGST' in item list"
+    conditions:
+        - "Test fails, if  Invoice (You can add, edit or delete multiple items here.) pop-up 'GST Type' radio button not get add to item list"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "22 july, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug: 
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

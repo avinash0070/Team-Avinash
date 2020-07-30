@@ -1,0 +1,44 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "28 july, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Add customer details (Customer details are mandatory) pop-up 'Previous' button should get moved to select pop-up"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to FINANCE -> Customer -> Invoice Sent"
+        - "Verify that the default page is invoice sent"
+        - "Verify that left menu 'Invoice Sent' is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Invoice' button"
+        - "Verify that search customer (Select customer from search list or add new) popup is open"
+        - "Fill mandatory details"
+        - "Click on 'Search' button"
+        - "If search result is not present, verify there is 'Add new customer' button get displayed"
+        - "Click on 'Add new customer' button"
+        - "Verify that Select (Select type of customer) pop-up get open"
+        - "Verify that radio button present with 'Company, Individual'"
+        - "Select radio button along with 'Company'"
+        - "Verify that there is 'Next' button present"
+        - "Click on 'Next' button"
+        - "Verify that add customer details (Customer details are mandatory) pop-up is open"
+        - "Verify that there is 'Previous' button present"
+        - "Click on 'Previous' button, it should get moved to previous select (Select type of customer) pop-up"
+    conditions:
+        - "Test fails, if add customer details (Customer details are mandatory) pop-up 'Previous' button should not get moved to select pop-up"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "28 july, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

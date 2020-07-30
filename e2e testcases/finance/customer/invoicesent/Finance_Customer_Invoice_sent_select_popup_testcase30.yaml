@@ -1,0 +1,39 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "28 july, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Select (Select type of customer) pop-up should get open"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to FINANCE -> Customer -> Invoice Sent"
+        - "Verify that the default page is invoice sent"
+        - "Verify that left menu 'Invoice Sent' is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Invoice' button"
+        - "Verify that search customer(Select customer from search list or add new) popup is open"
+        - "Verify that there is search filter with place holder 'Search Customer'"
+        - "Verify that there is 'Search' button"
+        - "Fill mandatory details"
+        - "Click on 'Search' button"
+        - "If search result is not present, verify there is 'Add new customer' button get displayed"
+        - "Click on 'Add new customer' button"
+        - "Verify that Select (Select type of customer) pop-up get open"
+    conditions:
+        - "Test fails, if Select (Select type of customer) pop-up should not get open"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "28 july, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
