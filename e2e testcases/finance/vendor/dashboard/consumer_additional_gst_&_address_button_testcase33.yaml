@@ -1,0 +1,33 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Vipul Suryawanshi"
+    lastUpdate: "21 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Clicking on 'Additional GST & Address' button at company registration details pop-up should add two fields below previous fields"
+    browsers:
+        - "Firefox"
+    steps:
+        - "Go to Finance -> Vendor -> Dashboard -> Add Vendor"
+        - "Verify that add company registration details pop up is there"
+        - "Verify that gst registraion type is display default list(Unregistered, Regular, Consumer, Composition)"
+        - "Select 'Consumer' gst registraion type"
+        - "Verify that there are five fields (GST registration type, Vendor CIN, Registered address, GST number, address)"
+        - "Verify that there is 'Additional GST & Address' button is present"
+        - "Click on 'Additional GST & Address' button should add two fields below previous one(GST number, Address)"
+    conditions:
+        - "Test fails if clicking on 'Additional GST & Address' button at company registration details pop-up does not add two fields below previous fields"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "21 June, 2020" #set the last when this test was run
+    runBy: Vipul Suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
