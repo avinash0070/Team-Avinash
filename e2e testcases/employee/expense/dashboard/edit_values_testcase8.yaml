@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: "Vipul Suryawanshi"
+    lastUpdate: "07 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Expense details pop-up should display updated values at dashboard"
+    browsers:
+        - "Firefox"
+    steps:
+        - "Go to Employee -> Expense -> Dashboard"
+        - "Verify that the default page is expense dashboard"
+        - "Verify that left menu expense dashboard is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Expense' button, add expense pop-up should get open"
+        - "Fill all mandatory fields"
+        - "Click on 'Add' button in add expense pop-up"
+        - "Verify expense details should get display at dashboard"
+        - "Click on 'Edit' icon, expense details pop-up should get open"
+        - "Change some field values or value of any one field or all field values"
+        - "Click on 'Update' button in edit expense details pop-up"
+        - "Verify at dashboard expensee details should get display with updated values"
+        - "Click on 'View' icon, expense details pop-up should get open"
+        - "Verify updated values should get display in pop-up"
+    conditions:
+        - "Test fails if expense details pop-up does not display updated values at dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "07 June, 2020" #set the last when this test was run
+    runBy: Vipul suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
