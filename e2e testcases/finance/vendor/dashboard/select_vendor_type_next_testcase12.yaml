@@ -1,0 +1,30 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Vipul Suryawanshi"
+    lastUpdate: "21 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Select type of vendor pop-up 'next' button navigate to next page"
+    browsers:
+        - "Firefox"
+    steps:
+        - "Go to Finance -> Vendor -> Dashboard -> Add Vendor"
+        - "Verify that select type of vendor pop-up is there 
+        - "Click on 'Next' button"
+        - "Verify that select type of vendor page moved to next page"
+    conditions:
+        - "Test fails if select type of vendor pop-up 'Next' button does not navigate to next page"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "21 June, 2020" #set the last when this test was run
+    runBy: Vipul Suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
