@@ -1,0 +1,53 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Swapnil Sangvikar"
+    lastUpdate: "29 july, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Late charge details pop-up 'Upload Contract' button should get file-select field open for file uploads"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to FINANCE -> Customer -> Invoice Sent"
+        - "Verify that the default page is invoice sent"
+        - "Verify that left menu 'Invoice Sent' is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Invoice' button"
+        - "Verify that search customer (Select customer from search list or add new) popup is open"
+        - "Fill mandatory details"
+        - "Click on 'Search' button"
+        - "If search result is not present, verify there is 'Add new customer' button get displayed"
+        - "Click on 'Add new customer' button"
+        - "Verify that Select (Select type of customer) pop-up get open"
+        - "Verify that radio button present with 'Company, Individual'"
+        - "Select radio button along with 'Company'"
+        - "Verify that there is 'Next' button present"
+        - "Click on 'Next' button"
+        - "Verify that add customer details (Customer details are mandatory) pop-up is open"
+        - "Fill mandatory details"
+        - "Verify that there is 'Next' button present"
+        - "Click on 'Next' button"
+        - "Verify that company registration details (Please fill company details.) pop-up is open"
+        - "Verify that there is 'Next' button present"
+        - "Click on 'Next' button" 
+        - "Verify that late charge details (Please fill late charge details here.) pop-up is open"
+        - "Verify that there is 'Upload Contract' button"
+        - "Click on 'Upload Contract' button, it should get file-select field open for file uploads"
+        - "Select file for upload"
+        - "Verify that there is name of file present with extension in-front of 'Upload Contract' button"
+    conditions:
+        - "Test fails, if late charge details pop-up 'Upload Contract' button should not get file-select field open for file uploads"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "29 july, 2020" #set the last when this test was run
+    runBy: Swapnil Sangvikar #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
