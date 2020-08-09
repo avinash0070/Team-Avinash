@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: "Gaurav Suryawanshi"
+    lastUpdate: "05 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Added category should display at dashboard with 'status enable'"
+    browsers:
+        - "Chrome"
+    steps:
+        - "Go to FINANCE -> Expense -> Category"
+        - "Click on 'Add Category' button, it should open Add Category pop-up form"
+        - "Enter category name in add category details field"
+        - "Verify there is select category type dropdown"
+        - "Change dropdown to 'Per day'"
+        - "Enter value in add category details field"
+        - "Verify default status 'Enable' selected"
+        - "Click on 'Add' button in category detail pop-up form"
+        - "Verify added category should get display at dashboard with name, type, value, status"
+        - "Verify added category status should get display at dashboard with 'enable' icon"
+        - "Verify added category should get display at dashboard with edit icon"
+
+    conditions:
+        - "Test fails if added category did not displayed at dashboard with 'status enable'"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "05 June, 2020" #set the last when this test was run
+    runBy: Gaurav #name of the person running this testType
+    duration: 12 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
+        
