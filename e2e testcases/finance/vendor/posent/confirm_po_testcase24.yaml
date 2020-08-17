@@ -1,0 +1,43 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Vipul Suryawanshi"
+    lastUpdate: "23 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "after clicking 'Next' button confirm purchase order details pop-up should display"
+    browsers:
+        - "Firefox"
+    steps:
+        - "Go to Finance -> Vendor -> PO sent -> Add Purchase Order"
+        - "Verify that purchase order details pop-up is there"
+        - "Click on 'Next' button"
+        - "Verify that confirm purchase order details pop-up should open"
+        - "Check spelling on all text contents"
+        - "Verify that there is company name and company logo"
+        - "Verify that default selected vendor details are display(Vendor Name, PAN, Address)"
+        - "Verify po date and po due date should get display in front of 'PO date' and 'PO due date' field"
+        - "Verify that there are items list(Item Name, Description, Quantity, Price)"
+        - "Verify item name and description should get display below 'Item' and 'Description' field"
+        - "Verify quantity and price should get display below 'Quantity' and 'Price' field"
+        - "Verify amount should get display below 'Amount' field"
+        - "Verify total amount should get display in front of 'Total' field"
+        - "Verify that there is 'Previous' button"
+        - "Verify that there is 'Create Purchase Order' button"
+        - "Verify that company signature is there"
+        - "Verify that there is 'Cancel' button with icon"
+    conditions:
+        - "Test fails if after clicking 'Next' button purchase order details pop-up does not display"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "23 June, 2020" #set the last when this test was run
+    runBy: Vipul Suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
