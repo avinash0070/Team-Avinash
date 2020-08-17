@@ -1,0 +1,41 @@
+testType: e2e #Valid category are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: Gaurav Suryawanshi"
+    lastUpdate: "08 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Selected all dropdown should display all category of expense pending approval at pending approval dashboard"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Go to Employee -> Expense -> Dashboard"
+        - "Click on 'Add Expense' button it should open expense detail pop-up form"
+        - "Fill all the mandatory field"
+        - "Click on 'Add' button in expense details pop-up form, expense should get added at dashboard"
+        - "Go to MY TEAM -> Expense -> Pending Approval"
+        - "Verify that there is expense pending approval display at pending approval"
+        - "Click on 'Action' icon it should open pop-up"
+        - "'Approve' the pending approval it should open approve expense pop-up form"
+        - "Write comment on it and click on 'Approve' button"
+        - "Go to Finance -> Expense -> Pending Approval"
+        - "Change dropdown to 'All'"
+        - "Verify all category types of expense should get display at pending approval dashboard"
+  
+    conditions:
+        - "Test fails if selected all dropdown did not displayed all category of expense pending approval at pending approval dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "08 June, 2020" #set the last when this test was run
+    runBy: Gaurav #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

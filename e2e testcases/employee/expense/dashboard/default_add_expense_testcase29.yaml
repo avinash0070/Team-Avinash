@@ -5,7 +5,7 @@ feature:
     lastUpdate: "07 June, 2020"
     status: "production" #valid status are "Being defined", "development", "test", "production"
 test:
-    summary: "'Add Expense' button should add expense at dashboard"
+    summary: "'Add Expense' button should display add expense default fields at pop-up"
     browsers:
         - "Firefox"
     steps:
@@ -20,7 +20,7 @@ test:
         - "Verify that there is 'Add' button"
         - "Verify that there is 'Close' button with icon"
     conditions:
-        - "Test fails if 'Add Expense' button does not add expense at dashboard"
+        - "Test fails if 'Add Expense' button does not display add expense default fields at pop-up"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated

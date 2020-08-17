@@ -1,0 +1,36 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: "Gaurav Suryawanshi"
+    lastUpdate: "10 june, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Default expense category dashboard should show expense category"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Go to FINANCE -> Expense -> Category"
+        - "Verify that the default page is category"
+        - "Verify that left menu category is highlighted"
+        - "Check spelling on all text contents"
+        - "Verify that 'Add Category' button is present at top"
+        - "Verify that there is 'search by employee name' input field is present at category dashboard "
+        - "Verify that there is 'records' dropdown present at category dashboard"
+        - "Verify that there is pagination present at category dashboard"
+    conditions:
+        - "Test fails if expense category page is not displayed"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "10 june, 2020" #set the last when this test was run
+    runBy: Gaurav #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here
