@@ -17,7 +17,7 @@ test:
         - "Verify that there is 'Search' button"
         - "Verify that there is 'Cancel' button with icon"
     conditions:
-        - "Test fails if vendor po sent 'Add Vendor' button does not open pop-up in dashboard"
+        - "Test fails if vendor po sent 'Add Ourchase Order' button does not open pop-up in dashboard"
     automation:
         status: manual #this test is automated or not
         testPath: #set this with a valid path if test is automated
