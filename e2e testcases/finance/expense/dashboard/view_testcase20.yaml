@@ -1,0 +1,34 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Expense"
+    owner: Gaurav Suryawanshi"
+    lastUpdate: "08 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Click on view icon should open expense details pop-up form"
+    browsers:
+        - "Chrome"
+        - "Firefox"
+    steps:
+        - "Go to Employee -> Expense -> Dashboard"
+        - "Click on 'Add Expense' button it should open expense detail pop-up form"
+        - "Fill all the mandatory field"
+        - "Click on 'Add' button in exepnse deatails pop-up form, expense should get added at dashboard"
+        - "Go to Finance -> Expense"
+        - "Click on view icon, expense details pop-up form should get open"
+    conditions:
+        - "Test fails if click on view icon do not open expense details pop-up form"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "08 June, 2020" #set the last when this test was run
+    runBy: Gaurav #name of the person running this testType
+    duration: 10 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+                "Multi time bug summary"
+        bugNum: #if bug was reported and filed, report the bug number here

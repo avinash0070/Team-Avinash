@@ -1,0 +1,32 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Vendor"
+    owner: "Vipul Suryawanshi"
+    lastUpdate: "23 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Click on 'Edit' icon should edit items list at purchase order page"
+    browsers:
+        - "Firefox"
+    steps:
+        - "Go to Finance -> Vendor -> PO sent -> Add Purchase Order"
+        - "Verify that purchase order page is there"
+        - "Fill all mandatory fields in add items list field"
+        - "Click on 'Add' button icon in add items list field"
+        - "Verify items list should get display at purchase order page"
+        - "Click on 'Edit' icon, edit items list field should get open"
+    conditions:
+        - "Test fails if click on 'Edit' icon does not edit items list at purchase order page"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "23 June, 2020" #set the last when this test was run
+    runBy: Vipul Suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here

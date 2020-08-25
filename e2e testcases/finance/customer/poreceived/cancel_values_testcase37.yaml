@@ -1,0 +1,40 @@
+testType: e2e #Valid types are unit, e2e, load or failure
+feature:
+    name: "Customer"
+    owner: "Vipul Suryawanshi"
+    lastUpdate: "23 June, 2020"
+    status: "production" #valid status are "Being defined", "development", "test", "production"
+test:
+    summary: "Cancel purchase order pop-up should display po no. and purchase order should remove from po received dashboard"
+    browsers:
+        - "Firefox"
+    steps:
+        - "Go to Finance -> Customer -> PO received"
+        - "Verify that the default page is customer 'PO received'"
+        - "Verify that left menu customer po received is highlighted"
+        - "Check spelling on all text contents"
+        - "Click on 'Add Purchase Order' button, add purchase order pop-up should get open"
+        - "Fill all mandatory fields"
+        - "Click on 'Create Purchase Order' button in add purchase order pop-up"
+        - "Verify purchase order should get display at po received"
+        - "Click on 'Cancel' icon, cancel purchase order pop-up should get open"
+        - "Verify po no. of selected purchase order"
+        - "Click on 'Yes' button"
+        - "Verify cancel purchase order pop-up should get close and status of that purchase order should get change on po received dashboard"
+        - "If click on 'No' button"
+        - "Verify cancel purchase order pop-up should get close"
+    conditions:
+        - "Test fails if click on cancel purchase order pop-up not display po no. and purchase order does not remove from po received dashboard"
+    automation:
+        status: manual #this test is automated or not
+        testPath: #set this with a valid path if test is automated
+testRun:
+    status: pass #valid status are notRun, pass, fail, sometimeFail
+    date: "23 June, 2020" #set the last when this test was run
+    runBy: Vipul suryawanshi #name of the person running this testType
+    duration: 15 seconds #time taken in seconds to run this test
+    env: qa #valid value are dev, qa, production
+    buildVersion: xxx #mention the build version
+    bug:
+        details:
+        bugNum: #if bug was reported and filed, report the bug number here
